@@ -56,6 +56,38 @@ async function loadSettings() {
   }
 }
 
+function getYouTubeVideoId(url) {
+  if (!url || url === '#') return '';
+
+  try {
+    const u = new URL(url);
+    const host = u.hostname.replace(/^www\./, '');
+
+    if (host === 'youtu.be') {
+      return u.pathname.split('/').filter(Boolean)[0] || '';
+    }
+
+    if (host === 'youtube.com' || host === 'm.youtube.com') {
+      if (u.pathname === '/watch') return u.searchParams.get('v') || '';
+
+      const parts = u.pathname.split('/').filter(Boolean);
+      if (['shorts', 'embed', 'live'].includes(parts[0])) {
+        return parts[1] || '';
+      }
+    }
+  } catch (_) {
+    // Fall through to regex for pasted links without a protocol.
+  }
+
+  const match = String(url).match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|shorts\/|embed\/|live\/))([A-Za-z0-9_-]{6,})/i);
+  return match ? match[1] : '';
+}
+
+function getYouTubeThumbnail(url) {
+  const id = getYouTubeVideoId(url);
+  return id ? `https://i.ytimg.com/vi/${id}/hqdefault.jpg` : '';
+}
+
 async function loadProducts() {
   const res = await fetch('products.json?ts=' + Date.now(), { cache: 'no-store' });
   const data = await res.json();
@@ -66,8 +98,10 @@ async function loadProducts() {
     const items = products.filter(p => p.category === category);
 
     grid.innerHTML = items.map(p => {
-      const image = p.image
-        ? `<img src="${p.image}" alt="${p.name}">`
+      const youtubeThumbnail = getYouTubeThumbnail(p.review);
+      const imageSrc = p.image || youtubeThumbnail;
+      const image = imageSrc
+        ? `<img src="${imageSrc}" alt="${p.name}">`
         : `<div class="product-placeholder">WU</div>`;
 
       const affiliate = p.affiliate && p.affiliate !== '#'
