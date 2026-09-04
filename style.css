@@ -2,3 +2,17 @@
 .footer-links { display:flex; gap:.55rem; flex-wrap:wrap; margin-top:.55rem; }
 .footer-links a { color:inherit; text-decoration:none; font-weight:600; }
 .footer-links a:hover, .footer-links a:focus-visible { text-decoration:underline; }
+
+/* Product image presentation: fill card media area cleanly (removes YouTube thumbnail letterboxing) */
+.product-image{
+  aspect-ratio:16/9;
+  padding:0;
+  overflow:hidden;
+}
+.product-image img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
+  display:block;
+}
