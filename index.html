@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>WebUnit — Chigz Picks</title>
+  <meta name="description" content="Tech I've tested. Deals I'd actually recommend. Curated by Chigz Tech Reviews." />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap nav">
+      <a class="brand" href="#top" aria-label="WebUnit home">
+        <span class="brand-web">WEB</span><span class="brand-unit">UNIT</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#deals">Deals</a>
+        <a href="#picks">Chigz Picks</a>
+        <a href="#phones">Smartphones</a>
+        <a href="#creator">Creator Gear</a>
+        <a href="#home-tech">Home Tech</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <div class="eyebrow">Curated by Chigz Tech Reviews</div>
+          <h1>Tech I’ve tested.<br><span>Deals I’d actually recommend.</span></h1>
+          <p class="hero-copy">A simple shortlist of standout tech, creator gear and current deals — picked from products I’ve actually used, reviewed or would confidently buy.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#picks">See Chigz Picks</a>
+            <a class="btn btn-secondary" href="#deals">Today’s Deals</a>
+          </div>
+          <p class="micro">Some links are affiliate links. If you buy through them, WebUnit may earn a commission at no extra cost to you.</p>
+        </div>
+        <div class="hero-card">
+          <div class="hero-card-label">WEBUNIT PRINCIPLE</div>
+          <div class="hero-card-score">TESTED<br>FIRST.</div>
+          <p>No endless lists. No filler. Just a focused collection of tech worth your attention.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="quick-links">
+      <div class="wrap quick-grid">
+        <a href="#deals"><span>🔥</span><strong>Today’s Deals</strong><small>Short-term offers worth checking</small></a>
+        <a href="#picks"><span>🏆</span><strong>Chigz Picks</strong><small>My strongest recommendations</small></a>
+        <a href="#creator"><span>🎥</span><strong>Creator Gear</strong><small>What I use to make content</small></a>
+        <a href="#phones"><span>📱</span><strong>Best Smartphones</strong><small>Standout phones by category</small></a>
+      </div>
+    </section>
+
+    <section class="section" id="deals">
+      <div class="wrap">
+        <div class="section-heading">
+          <div>
+            <span class="section-kicker">Limited-time</span>
+            <h2>Today’s Deals</h2>
+          </div>
+          <p>Only add genuine discounts here. If there’s no worthwhile deal, leave this section short.</p>
+        </div>
+        <div class="product-grid" data-category="deals"></div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="picks">
+      <div class="wrap">
+        <div class="section-heading">
+          <div>
+            <span class="section-kicker">Best of the best</span>
+            <h2>Chigz Picks</h2>
+          </div>
+          <p>Products that earned a place here because they stood out in real-world testing.</p>
+        </div>
+        <div class="product-grid" data-category="picks"></div>
+      </div>
+    </section>
+
+    <section class="section" id="phones">
+      <div class="wrap">
+        <div class="section-heading">
+          <div>
+            <span class="section-kicker">Mobile</span>
+            <h2>Best Smartphones</h2>
+          </div>
+          <p>Keep this focused on clear winners rather than trying to list every phone you’ve reviewed.</p>
+        </div>
+        <div class="product-grid" data-category="phones"></div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="creator">
+      <div class="wrap">
+        <div class="section-heading">
+          <div>
+            <span class="section-kicker">Behind the channel</span>
+            <h2>My Creator Gear</h2>
+          </div>
+          <p>Useful gear from the setup behind Chigz Tech Reviews.</p>
+        </div>
+        <div class="product-grid" data-category="creator"></div>
+      </div>
+    </section>
+
+    <section class="section" id="home-tech">
+      <div class="wrap">
+        <div class="section-heading">
+          <div>
+            <span class="section-kicker">Home & entertainment</span>
+            <h2>TVs, Projectors & Smart Home</h2>
+          </div>
+          <p>Entertainment and smart-home products that are genuinely worth considering.</p>
+        </div>
+        <div class="product-grid" data-category="home"></div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="wrap cta-box">
+        <div>
+          <span class="section-kicker light">Want the full reviews?</span>
+          <h2>Watch the testing behind the picks.</h2>
+          <p>WebUnit is the shortlist. Chigz Tech Reviews is where you’ll find the full videos, comparisons and real-world testing.</p>
+        </div>
+        <a class="btn btn-light" href="https://www.youtube.com/@ChigzTechReviews" target="_blank" rel="noopener">Visit Chigz Tech Reviews</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-grid">
+      <div>
+        <div class="brand footer-brand"><span class="brand-web">WEB</span><span class="brand-unit">UNIT</span></div>
+        <p>Tech worth knowing. Gear worth buying.</p>
+      </div>
+      <div class="footer-copy">
+        <p><strong>Affiliate disclosure:</strong> Some outbound links may be affiliate links. WebUnit may earn a commission from qualifying purchases at no additional cost to you.</p>
+        <p>© <span id="year"></span> WebUnit. Recommendations from Chigz Tech Reviews.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

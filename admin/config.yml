@@ -1,0 +1,81 @@
+backend:
+  name: github
+  repo: chigztr/webunit
+  branch: main
+
+site_url: https://webunit.co.uk
+display_url: https://webunit.co.uk
+logo_url: https://webunit.co.uk/favicon.ico
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+publish_mode: simple
+
+collections:
+  - label: "WebUnit Products"
+    name: "webunit_products"
+    editor:
+      preview: false
+    files:
+      - label: "Products & Deals"
+        name: "products"
+        file: "products.json"
+        format: "json"
+        fields:
+          - label: "Products"
+            name: "products"
+            widget: "list"
+            summary: "{{fields.name}} — {{fields.category}}"
+            collapsed: true
+            minimize_collapsed: true
+            add_to_top: true
+            fields:
+              - label: "Section"
+                name: "category"
+                widget: "select"
+                options:
+                  - { label: "🔥 Today's Deals", value: "deals" }
+                  - { label: "🏆 Chigz Picks", value: "picks" }
+                  - { label: "📱 Smartphones", value: "phones" }
+                  - { label: "🎥 Creator Gear", value: "creator" }
+                  - { label: "📺 TV / Projector / Smart Home", value: "home" }
+
+              - label: "Product Name"
+                name: "name"
+                widget: "string"
+
+              - label: "Badge"
+                name: "badge"
+                widget: "string"
+                required: false
+                hint: "Examples: Chigz Pick, Hot Deal, Best Camera, Tested by Chigz"
+
+              - label: "Recommendation"
+                name: "description"
+                widget: "text"
+                hint: "Keep this to one short sentence."
+
+              - label: "Extra Info"
+                name: "meta"
+                widget: "string"
+                required: false
+                hint: "Example: Chigz Tech Score: 92/100"
+
+              - label: "Affiliate / Buy Link"
+                name: "affiliate"
+                widget: "string"
+                required: false
+                default: "#"
+
+              - label: "YouTube Review Link"
+                name: "review"
+                widget: "string"
+                required: false
+                default: "#"
+
+              - label: "Product Image"
+                name: "image"
+                widget: "image"
+                required: false
+                hint: "Upload a WebP, JPG or PNG. Landscape/transparent product images work best."

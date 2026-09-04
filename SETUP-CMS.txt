@@ -1,0 +1,93 @@
+WEBUNIT PROPER CMS — SETUP
+
+This version uses:
+- Netlify for hosting/deployments
+- GitHub as the site repository
+- Decap CMS for the /admin editor
+- Netlify's GitHub OAuth provider for login
+
+WHY GITHUB IS REQUIRED
+The CMS needs a repository it can write your edits to.
+When you click Publish in the CMS, Decap commits the change to GitHub.
+Netlify detects the commit and automatically redeploys WebUnit.
+
+1. CREATE A GITHUB REPOSITORY
+Create a private or public repository named:
+webunit
+
+Upload ALL files from this package to the repository root.
+
+2. EDIT ONE LINE
+Open:
+admin/config.yml
+
+The CMS is already configured for:
+repo: chigztr/webunit
+
+No repo-path edit is required.
+
+3. CONNECT NETLIFY TO GITHUB
+In Netlify, open your WebUnit project.
+Connect/import the GitHub repository as the site's repository.
+Publish directory should be the repository root.
+There is no build command required because this is a plain static site.
+
+4. CREATE A GITHUB OAUTH APP
+In GitHub:
+Settings > Developer settings > OAuth Apps > New OAuth App
+
+Application name:
+WebUnit CMS
+
+Homepage URL:
+https://webunit.co.uk
+
+Authorization callback URL:
+https://api.netlify.com/auth/done
+
+Create the app, then generate a Client Secret.
+
+5. ADD GITHUB AUTHENTICATION TO NETLIFY
+In your Netlify project:
+Project configuration > Access & security > OAuth > Authentication providers
+
+Install/add GitHub.
+Enter the GitHub OAuth App Client ID and Client Secret.
+
+6. USE YOUR CMS
+Go to:
+https://webunit.co.uk/admin/
+
+Choose Login with GitHub.
+
+Open:
+WebUnit Products > Products & Deals
+
+You can then:
+- Add products
+- Delete products
+- Drag/reorder products
+- Change sections
+- Upload product images
+- Add affiliate links
+- Add YouTube review links
+- Edit descriptions/badges/scores
+
+Click Publish.
+
+That writes the update to GitHub and triggers a fresh Netlify deploy automatically.
+
+SECURITY
+Only GitHub users with push/write access to the WebUnit repository can publish through this backend.
+Keep the GitHub repository access restricted to people you trust.
+
+PRODUCT IMAGES
+Images uploaded in the CMS go to:
+images/uploads/
+
+They are referenced publicly as:
+/images/uploads/filename.jpg
+
+IMPORTANT AFFILIATE NOTE
+The page contains a general affiliate disclosure.
+Still follow any exact disclosure/link-format rules required by each affiliate programme you join.
