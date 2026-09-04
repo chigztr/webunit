@@ -1,5 +1,63 @@
-async function loadProducts(){
-  const res = await fetch('products.json?ts=' + Date.now(), {cache:'no-store'});
+function setText(id, value) {
+  const el = document.getElementById(id);
+  if (el && value !== undefined && value !== null && value !== '') el.textContent = value;
+}
+
+function setHref(id, value) {
+  const el = document.getElementById(id);
+  if (el && value) el.href = value;
+}
+
+async function loadSettings() {
+  try {
+    const res = await fetch('settings.json?ts=' + Date.now(), { cache: 'no-store' });
+    if (!res.ok) return;
+    const s = await res.json();
+
+    if (s.siteTitle) document.title = s.siteTitle;
+    const meta = document.getElementById('meta-description');
+    if (meta && s.metaDescription) meta.setAttribute('content', s.metaDescription);
+
+    setText('hero-eyebrow', s.heroEyebrow);
+    setText('hero-headline-1', s.heroHeadline1);
+    setText('hero-headline-2', s.heroHeadline2);
+    setText('hero-copy', s.heroCopy);
+
+    setText('deals-kicker', s.dealsKicker);
+    setText('deals-title', s.dealsTitle);
+    setText('deals-description', s.dealsDescription);
+    setText('picks-kicker', s.picksKicker);
+    setText('picks-title', s.picksTitle);
+    setText('picks-description', s.picksDescription);
+    setText('phones-kicker', s.phonesKicker);
+    setText('phones-title', s.phonesTitle);
+    setText('phones-description', s.phonesDescription);
+    setText('creator-kicker', s.creatorKicker);
+    setText('creator-title', s.creatorTitle);
+    setText('creator-description', s.creatorDescription);
+    setText('home-kicker', s.homeKicker);
+    setText('home-title', s.homeTitle);
+    setText('home-description', s.homeDescription);
+
+    setText('reviews-kicker', s.reviewsKicker);
+    setText('reviews-title', s.reviewsTitle);
+    setText('reviews-description', s.reviewsDescription);
+    setText('youtube-cta', s.reviewsButtonLabel);
+    setHref('youtube-cta', s.youtubeUrl);
+
+    setText('footer-tagline', s.footerTagline);
+    setText('affiliate-disclosure', s.affiliateDisclosure);
+    setText('footer-credit', s.footerCredit);
+    setHref('footer-youtube', s.youtubeUrl);
+    setHref('footer-chigztech', s.chigzTechUrl);
+    if (s.contactEmail) setHref('footer-contact', `mailto:${s.contactEmail}`);
+  } catch (e) {
+    console.warn('Could not load site settings', e);
+  }
+}
+
+async function loadProducts() {
+  const res = await fetch('products.json?ts=' + Date.now(), { cache: 'no-store' });
   const data = await res.json();
   const products = Array.isArray(data) ? data : (data.products || []);
 
@@ -34,7 +92,11 @@ async function loadProducts(){
       `;
     }).join('');
   });
-
-  document.getElementById('year').textContent = new Date().getFullYear();
 }
-loadProducts();
+
+async function init() {
+  document.getElementById('year').textContent = new Date().getFullYear();
+  await Promise.all([loadSettings(), loadProducts()]);
+}
+
+init();
