@@ -1,16 +1,20 @@
-WEBUNIT — YOUTUBE CHANNEL LABEL UPDATE
-======================================
+WEBUNIT — YOUTUBE LABEL FONT UPDATE
+===================================
 
-The top stats strip now shows this clickable text on the left:
+This update makes:
 
 Youtube.com/@ChigzTech
 
-It links to:
-http://Youtube.com/@ChigzTech
+match the visual weight of the YouTube subscriber/view counts:
+- larger
+- bold 900 weight
+- white
+- tighter spacing
+- subtle blue glow
+- blue hover state
 
 REPLACE ONLY:
 - index.html
 - style.css
-- app.js
 
-No CMS/product files need changing.
+app.js is included for convenience but does not require a functional change.
