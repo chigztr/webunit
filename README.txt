@@ -1,38 +1,18 @@
-WEBUNIT — EXACT PROPOSED DESIGN REBUILD
-======================================
+WEBUNIT — PREMIUM CARD REDESIGN
+=================================
 
-This version intentionally follows the design shown in the mockup you approved.
+This redesign fixes the main visual problems from the 15:24 screenshot.
 
-It is NOT the simplified layout from the previous ZIP.
-
-MATCHED ELEMENTS
-----------------
-- WEBUNIT by Chigz header
-- Desktop nav + search + Browse Picks
-- Large two-column hero
-- Big left-side headline with blue final word
-- Real Chigz portrait on the right
-- Blue hero panel / studio feel
-- Handwritten Better Tech / WebUnit by Chigz details
-- Three small product thumbnails from your CMS inside the hero
-- YouTube / subscribers / views panel floating across the bottom of the hero
-- Five category cards immediately underneath
-- Four-column desktop deal grid
-- Trust row below the deal cards
-- Mobile layout uses the same visual hierarchy:
-    headline
-    buttons
-    portrait
-    YouTube stats
-    category tiles
-    single-column deal cards
-- Mobile hamburger menu
-
-CMS
----
-The current settings.json and products.json remain compatible.
-Your hero text, stats, section headings, footer text, product cards,
-affiliate links and YouTube video mode still work.
+WHAT CHANGED
+------------
+- The hero is now ONE cohesive premium card instead of two disconnected halves.
+- Your photo fills the whole right-hand side instead of sitting inside a small isolated portrait box.
+- The blue studio treatment overlays the photo so the two halves feel connected.
+- The stats bar is INSIDE the hero card, not hanging awkwardly over the next section.
+- The first three products from your CMS still appear in the hero, but are larger and better integrated.
+- Category buttons sit cleanly beneath the hero.
+- CMS text, stats, product data, affiliate links and YouTube video mode remain compatible.
+- Mobile stacks in a stable order and avoids floating/overlapping elements.
 
 UPLOAD / REPLACE
 ----------------
@@ -42,11 +22,13 @@ Replace:
 - app.js
 
 Add:
-- images/chigz-portrait.jpg
+- images/chigz-hero-photo.jpg
 
-KEEP:
+KEEP YOUR EXISTING:
 - products.json
 - settings.json
 - admin/config.yml
 - _headers
 - images/uploads/
+
+No CMS migration is needed.
