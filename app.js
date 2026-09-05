@@ -30,6 +30,20 @@ function safeUrl(value = '') {
   }
 }
 
+function applyBannerImage(url) {
+  const img = document.getElementById('brand-banner-image');
+  const banner = document.querySelector('.brand-banner');
+  if (!img || !banner) return;
+
+  const clean = safeUrl(url);
+  if (clean) {
+    img.src = clean;
+    img.onerror = () => banner.classList.add('is-fallback');
+  } else {
+    img.onerror = () => banner.classList.add('is-fallback');
+  }
+}
+
 async function loadSettings() {
   try {
     const res = await fetch('settings.json?ts=' + Date.now(), { cache: 'no-store' });
@@ -44,9 +58,21 @@ async function loadSettings() {
     setText('hero-headline-1', s.heroHeadline1);
     setText('hero-headline-2', s.heroHeadline2);
     setText('hero-copy', s.heroCopy);
+
     setText('subscriber-count', s.youtubeSubscriberCount);
     setText('total-view-count', s.youtubeTotalViews);
-    setHref('youtube-stats-link', s.youtubeUrl);
+    setHref('youtube-subs-link', s.youtubeUrl);
+    setHref('youtube-views-link', s.youtubeUrl);
+    setHref('youtube-cta', s.youtubeUrl);
+    setHref('footer-youtube', s.youtubeUrl);
+
+    if (s.chigzChannelDisplayUrl) {
+      const label = document.querySelector('.channel-link span');
+      if (label) label.textContent = s.chigzChannelDisplayUrl;
+    }
+    if (s.chigzChannelUrl) setHref('chigz-channel-link', s.chigzChannelUrl);
+    if (s.brandBannerImage) applyBannerImage(s.brandBannerImage);
+
     setText('deals-kicker', s.dealsKicker);
     setText('deals-title', s.dealsTitle);
     setText('deals-description', s.dealsDescription);
@@ -66,11 +92,9 @@ async function loadSettings() {
     setText('reviews-title', s.reviewsTitle);
     setText('reviews-description', s.reviewsDescription);
     setText('youtube-cta', s.reviewsButtonLabel);
-    setHref('youtube-cta', s.youtubeUrl);
     setText('footer-tagline', s.footerTagline);
     setText('affiliate-disclosure', s.affiliateDisclosure);
     setText('footer-credit', s.footerCredit);
-    setHref('footer-youtube', s.youtubeUrl);
     setHref('footer-chigztech', s.chigzTechUrl);
     if (s.contactEmail) setHref('footer-contact', `mailto:${s.contactEmail}`);
   } catch (e) {
@@ -84,9 +108,7 @@ function getYouTubeVideoId(url) {
     const u = new URL(url);
     const host = u.hostname.replace(/^www\./, '');
 
-    if (host === 'youtu.be') {
-      return u.pathname.split('/').filter(Boolean)[0] || '';
-    }
+    if (host === 'youtu.be') return u.pathname.split('/').filter(Boolean)[0] || '';
 
     if (host === 'youtube.com' || host === 'm.youtube.com') {
       if (u.pathname === '/watch') return u.searchParams.get('v') || '';
@@ -139,7 +161,7 @@ function renderProductMedia(product) {
     return `<img src="${escapeHtml(imageSrc)}" alt="${name}" loading="lazy" decoding="async"${fallbackAttr}>`;
   }
 
-  return `<div class="product-placeholder">WU</div>`;
+  return `<div class="product-placeholder">WEB<span style="opacity:.65">UNIT</span></div>`;
 }
 
 function enableClickToPlay() {
@@ -177,6 +199,11 @@ async function loadProducts() {
       const category = grid.dataset.category;
       const items = products.filter(p => p.category === category);
 
+      if (!items.length) {
+        grid.innerHTML = `<div class="empty-state">No products added here yet. Add them in the CMS when ready.</div>`;
+        return;
+      }
+
       grid.innerHTML = items.map(p => {
         const media = renderProductMedia(p);
         const affiliateUrl = safeUrl(p.affiliate);
@@ -208,7 +235,6 @@ async function loadProducts() {
     console.warn('Could not load products', e);
   }
 }
-
 
 async function init() {
   enableClickToPlay();

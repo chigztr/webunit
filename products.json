@@ -1,169 +1,154 @@
 {
   "products": [
     {
-      "badge": "Deal ",
-      "meta": "Add current deal details here",
+      "category": "deals",
       "name": "POCO F9 Ultra",
-      "affiliate": "https://bit.ly/4zOM8xL",
-      "media_type": "video",
-      "review": "https://youtu.be/1V66tfO0L9A",
-      "image": "",
-      "description": "Flagship-level performance at a price that makes sense when discounted.",
-      "category": "deals"
-    },
-    {
       "badge": "Deal",
+      "description": "Flagship-level performance at a price that makes sense when discounted.",
       "meta": "Add current deal details here",
-      "name": "RayNeo GT Max",
-      "affiliate": "https://amzn.to/4zS4he9",
-      "media_type": "video",
+      "affiliate": "#",
       "review": "#",
-      "image": "/images/uploads/d.png",
+      "image": ""
+    },
+    {
+      "category": "deals",
+      "name": "RayNeo GT Max",
+      "badge": "Deal",
       "description": "Immersive AR display glasses for movies, gaming and travel.",
-      "category": "deals"
+      "meta": "Add current deal details here",
+      "affiliate": "#",
+      "review": "#",
+      "image": ""
     },
     {
-      "badge": "Hot Deal",
-      "meta": "Keep this section fresh",
+      "category": "deals",
       "name": "Featured Deal",
-      "affiliate": "#",
-      "media_type": "video",
-      "review": "#",
-      "image": "",
+      "badge": "Hot Deal",
       "description": "Replace this with any genuine short-term offer worth highlighting.",
-      "category": "deals"
+      "meta": "Keep this section fresh",
+      "affiliate": "#",
+      "review": "#",
+      "image": ""
     },
     {
-      "badge": "Chigz Pick",
-      "meta": "Tested by Chigz",
+      "category": "picks",
       "name": "POCO F9 Ultra",
-      "affiliate": "#",
-      "media_type": "video",
-      "review": "https://youtu.be/1V66tfO0L9A",
-      "image": "",
+      "badge": "Chigz Pick",
       "description": "One of the strongest all-round performance phones I’ve tested this year.",
-      "category": "picks"
+      "meta": "Tested by Chigz",
+      "affiliate": "#",
+      "review": "#",
+      "image": ""
     },
     {
+      "category": "picks",
+      "name": "LG OLED evo C6",
       "badge": "Chigz Pick",
-      "meta": "Chigz Tech Score: 92/100",
-      "name": "LG OLED evo C6",
-      "affiliate": "#",
-      "media_type": "video",
-      "review": "#",
-      "image": "",
       "description": "A premium OLED choice with especially strong gaming performance.",
-      "category": "picks"
-    },
-    {
-      "badge": "Tested by Chigz",
-      "meta": "Full review available",
-      "name": "RayNeo GT Max",
-      "affiliate": "#",
-      "media_type": "video",
-      "review": "#",
-      "image": "",
-      "description": "A compelling wearable display for private viewing and portable entertainment.",
-      "category": "picks"
-    },
-    {
-      "badge": "Best All-Rounder",
-      "meta": "Best for most flagship buyers",
-      "name": "Samsung Galaxy S26 Ultra",
-      "affiliate": "#",
-      "media_type": "video",
-      "review": "https://youtu.be/0M9DL1nFGYw",
-      "image": "",
-      "description": "Excellent cameras, display and overall flagship versatility.",
-      "category": "phones"
-    },
-    {
-      "badge": "Performance Pick",
-      "meta": "Best for performance/value",
-      "name": "POCO F9 Ultra",
-      "affiliate": "#",
-      "media_type": "video",
-      "review": "https://youtu.be/1V66tfO0L9A",
-      "image": "",
-      "description": "Serious speed and gaming power without the usual flagship pricing.",
-      "category": "phones"
-    },
-    {
-      "badge": "Camera Pick",
-      "meta": "Best for mobile imaging",
-      "name": "Vivo X300 Ultra",
-      "affiliate": "#",
-      "media_type": "video",
-      "review": "#",
-      "image": "",
-      "description": "A camera-first flagship for buyers who prioritise photos and video.",
-      "category": "phones"
-    },
-    {
-      "badge": "Creator Gear",
-      "meta": "Used by Chigz Tech Reviews",
-      "name": "Your Main Camera",
-      "affiliate": "#",
-      "media_type": "video",
-      "review": "#",
-      "image": "",
-      "description": "Replace this with the camera or phone you currently use most for filming.",
-      "category": "creator"
-    },
-    {
-      "badge": "Creator Gear",
-      "meta": "Used by Chigz Tech Reviews",
-      "name": "Your Main Microphone",
-      "affiliate": "#",
-      "media_type": "video",
-      "review": "#",
-      "image": "",
-      "description": "Add the microphone you trust for voiceovers, reviews or studio recording.",
-      "category": "creator"
-    },
-    {
-      "badge": "Creator Gear",
-      "meta": "Used by Chigz Tech Reviews",
-      "name": "Your Favourite SSD",
-      "affiliate": "#",
-      "media_type": "video",
-      "review": "#",
-      "image": "",
-      "description": "Storage is an easy affiliate category because creators constantly need more of it.",
-      "category": "creator"
-    },
-    {
-      "badge": "TV Pick",
       "meta": "Chigz Tech Score: 92/100",
+      "affiliate": "#",
+      "review": "#",
+      "image": ""
+    },
+    {
+      "category": "picks",
+      "name": "RayNeo GT Max",
+      "badge": "Tested by Chigz",
+      "description": "A compelling wearable display for private viewing and portable entertainment.",
+      "meta": "Full review available",
+      "affiliate": "#",
+      "review": "#",
+      "image": ""
+    },
+    {
+      "category": "phones",
+      "name": "Samsung Galaxy S26 Ultra",
+      "badge": "Best All-Rounder",
+      "description": "Excellent cameras, display and overall flagship versatility.",
+      "meta": "Best for most flagship buyers",
+      "affiliate": "#",
+      "review": "#",
+      "image": ""
+    },
+    {
+      "category": "phones",
+      "name": "POCO F9 Ultra",
+      "badge": "Performance Pick",
+      "description": "Serious speed and gaming power without the usual flagship pricing.",
+      "meta": "Best for performance/value",
+      "affiliate": "#",
+      "review": "#",
+      "image": ""
+    },
+    {
+      "category": "phones",
+      "name": "Vivo X300 Ultra",
+      "badge": "Camera Pick",
+      "description": "A camera-first flagship for buyers who prioritise photos and video.",
+      "meta": "Best for mobile imaging",
+      "affiliate": "#",
+      "review": "#",
+      "image": ""
+    },
+    {
+      "category": "creator",
+      "name": "Your Main Camera",
+      "badge": "Creator Gear",
+      "description": "Replace this with the camera or phone you currently use most for filming.",
+      "meta": "Used by Chigz Tech Reviews",
+      "affiliate": "#",
+      "review": "#",
+      "image": ""
+    },
+    {
+      "category": "creator",
+      "name": "Your Main Microphone",
+      "badge": "Creator Gear",
+      "description": "Add the microphone you trust for voiceovers, reviews or studio recording.",
+      "meta": "Used by Chigz Tech Reviews",
+      "affiliate": "#",
+      "review": "#",
+      "image": ""
+    },
+    {
+      "category": "creator",
+      "name": "Your Favourite SSD",
+      "badge": "Creator Gear",
+      "description": "Storage is an easy affiliate category because creators constantly need more of it.",
+      "meta": "Used by Chigz Tech Reviews",
+      "affiliate": "#",
+      "review": "#",
+      "image": ""
+    },
+    {
+      "category": "home",
       "name": "LG OLED evo C6",
-      "affiliate": "#",
-      "media_type": "video",
-      "review": "#",
-      "image": "",
+      "badge": "TV Pick",
       "description": "Premium OLED picture quality with outstanding gaming credentials.",
-      "category": "home"
-    },
-    {
-      "badge": "Projector Pick",
-      "meta": "Projector recommendation",
-      "name": "XGIMI Elfin Flip 4K",
+      "meta": "Chigz Tech Score: 92/100",
       "affiliate": "#",
-      "media_type": "video",
       "review": "#",
-      "image": "",
-      "description": "A compact 4K projector option with smart features and an easy setup.",
-      "category": "home"
+      "image": ""
     },
     {
-      "badge": "Smart Home Pick",
-      "meta": "Smart-home recommendation",
-      "name": "Roborock Qrevo Edge 2 Flow",
+      "category": "home",
+      "name": "XGIMI Elfin Flip 4K",
+      "badge": "Projector Pick",
+      "description": "A compact 4K projector option with smart features and an easy setup.",
+      "meta": "Projector recommendation",
       "affiliate": "#",
-      "media_type": "video",
-      "review": "https://youtu.be/Hu0G3TenTIo",
-      "image": "",
+      "review": "#",
+      "image": ""
+    },
+    {
+      "category": "home",
+      "name": "Roborock Qrevo Edge 2 Flow",
+      "badge": "Smart Home Pick",
       "description": "A strong robot vacuum option for automated everyday cleaning.",
-      "category": "home"
+      "meta": "Smart-home recommendation",
+      "affiliate": "#",
+      "review": "#",
+      "image": ""
     }
   ]
 }

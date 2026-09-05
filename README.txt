@@ -1,144 +1,72 @@
-WEBUNIT.CO.UK
-==============
+WEBUNIT STATIC HUB — NETLIFY READY
 
-WebUnit is a lightweight affiliate/recommendation site for Chigz Tech Reviews.
-
-LIVE SITE
----------
-https://webunit.co.uk
-
-CMS
----
-https://webunit.co.uk/admin/
-
-GITHUB REPOSITORY
------------------
-https://github.com/chigztr/webunit
-
-HOSTING
--------
-Cloudflare Pages
-
-Production branch:
-main
-
-Pages project:
-webunit
-
-Cloudflare Pages deployment URL:
-https://webunit-5r9.pages.dev
-
-Build settings:
-- Framework preset: None
-- Build command: blank
-- Build output directory: .
-- Root directory: blank
-
-AUTOMATIC DEPLOYMENTS
----------------------
-Changes committed to the main branch in GitHub automatically trigger a new
-Cloudflare Pages deployment.
-
-CMS publishing flow:
-
-Decap CMS
-→ Cloudflare Worker OAuth
-→ GitHub
-→ Cloudflare Pages
-→ webunit.co.uk
-
-CMS AUTHENTICATION
-------------------
-The CMS uses GitHub OAuth through a Cloudflare Worker.
-
-Worker:
-https://webunit-cms-auth.cvyas.workers.dev
-
-The Worker stores these secrets/variables in Cloudflare:
-- GITHUB_CLIENT_ID
-- GITHUB_CLIENT_SECRET
-
-Do not place the GitHub Client Secret in the GitHub repository.
-
-DOMAIN & DNS
-------------
-Domain:
-webunit.co.uk
-
-DNS provider:
-Cloudflare
-
-Domain registrar:
-IONOS
-
-Primary website:
-https://webunit.co.uk
-
-WWW:
-https://www.webunit.co.uk
-redirects permanently to:
-https://webunit.co.uk
-
-SSL:
-Cloudflare SSL enabled
-
-EMAIL
+FILES
 -----
-Email remains hosted by IONOS.
-
-Important:
-Do not remove or change the existing IONOS email DNS records unless intentionally
-changing email providers.
-
-These include:
-- MX records
-- SPF TXT record
-- DMARC
-- autodiscover
-- DKIM records
-
-CMS CONTENT FILES
------------------
+index.html
+style.css
+app.js
 products.json
-Contains the products/deals shown on the site.
 
-settings.json
-Contains editable site-wide content and links.
+HOW TO UPDATE PRODUCTS
+----------------------
+Open products.json.
 
-admin/config.yml
-Controls Decap CMS and points authentication to the Cloudflare Worker.
+Each product looks like this:
 
-_headers
-Cloudflare Pages response-header configuration.
-It prevents the CMS from being indexed and reduces stale JSON caching.
+{
+  "category": "picks",
+  "name": "POCO F9 Ultra",
+  "badge": "Chigz Pick",
+  "description": "One-line recommendation.",
+  "meta": "Chigz Tech Score: 94/100",
+  "affiliate": "YOUR-AFFILIATE-LINK",
+  "review": "YOUR-YOUTUBE-REVIEW-LINK",
+  "image": "images/poco-f9-ultra.webp"
+}
 
-PRODUCT IMAGES
---------------
-A manually uploaded product image takes priority.
+CATEGORIES
+----------
+deals
+picks
+phones
+creator
+home
 
-If no product image is uploaded and a YouTube Review Link is present,
-the site can automatically use the YouTube video thumbnail.
-
-CMS USAGE
----------
-1. Open https://webunit.co.uk/admin/
-2. Click Login with GitHub.
-3. Edit Products & Deals or Site Settings.
-4. Click Publish.
-5. Decap commits the change to GitHub.
-6. Cloudflare Pages automatically deploys the new version.
-
-NORMAL UPDATES DO NOT REQUIRE:
-- Editing HTML manually
-- Uploading ZIP files to a host
-- Manually deploying the website
+IMAGES
+------
+Create an /images folder and place product images inside it.
+Then update the "image" field in products.json.
 
 NETLIFY
 -------
-Netlify is no longer required for the live WebUnit setup.
+Drag the whole folder contents into your existing Netlify site deployment.
+Make webunit.co.uk the primary custom domain.
 
-The old Netlify project may be kept temporarily as a backup, but the live site,
-CMS authentication, DNS, SSL and deployments are handled by Cloudflare.
+IMPORTANT
+---------
+The site contains an affiliate disclosure.
+For Amazon and other affiliate programs, follow the exact disclosure requirements of each program as well.
 
-Last updated:
-September 2026
+
+EASY PRODUCT EDITOR
+-------------------
+Open:
+  https://YOURDOMAIN/admin.html
+
+Use the visual editor to:
+- Add products
+- Delete products
+- Change category
+- Edit descriptions
+- Add affiliate links
+- Add YouTube review links
+- Reorder entries
+
+Then click:
+  Download products.json
+
+Replace the existing products.json in your Netlify deployment.
+
+NOTE:
+This editor does not save directly to Netlify because a static site has no database/backend.
+For true browser-based publishing without re-uploading a file, use a Git-backed CMS such as Decap CMS.

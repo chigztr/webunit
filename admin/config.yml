@@ -43,9 +43,7 @@ collections:
                   - { label: "🎥 Creator Gear", value: "creator" }
                   - { label: "📺 TV / Projector / Smart Home", value: "home" }
 
-              - label: "Product Name"
-                name: "name"
-                widget: "string"
+              - { label: "Product Name", name: "name", widget: "string" }
 
               - label: "Badge"
                 name: "badge"
@@ -120,8 +118,23 @@ collections:
             name: "youtubeTotalViews"
             widget: "string"
             required: false
-            default: "—"
+            default: "185M+"
             hint: "Manual display value for the top strip. Examples: 185M+, 250M, 1.2B"
+          - label: "Top Strip Channel URL"
+            name: "chigzChannelUrl"
+            widget: "string"
+            required: false
+            default: "http://Youtube.com/@ChigzTech"
+          - label: "Top Strip Channel Label"
+            name: "chigzChannelDisplayUrl"
+            widget: "string"
+            required: false
+            default: "YouTube.com/@ChigzTech"
+          - label: "Brand Banner Image"
+            name: "brandBannerImage"
+            widget: "image"
+            required: false
+            hint: "Optional. Upload your main Chigz / YouTube artwork here to replace the bundled banner."
           - { label: "ChigzTech.com Link", name: "chigzTechUrl", widget: "string" }
           - { label: "Contact Email", name: "contactEmail", widget: "string" }
           - { label: "Footer Tagline", name: "footerTagline", widget: "string" }
