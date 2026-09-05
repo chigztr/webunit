@@ -30,6 +30,21 @@ function safeUrl(value = '') {
   }
 }
 
+function renderHeroSecondLine(value) {
+  const el = document.getElementById('hero-headline-2');
+  if (!el || !value) return;
+
+  const text = String(value).trim();
+  const parts = text.split(/\s+/);
+  if (parts.length < 2) {
+    el.textContent = text;
+    return;
+  }
+
+  const last = parts.pop();
+  el.innerHTML = `${escapeHtml(parts.join(' '))} <em>${escapeHtml(last)}</em>`;
+}
+
 async function loadSettings() {
   try {
     const res = await fetch('settings.json?ts=' + Date.now(), { cache: 'no-store' });
@@ -42,7 +57,7 @@ async function loadSettings() {
 
     setText('hero-eyebrow', s.heroEyebrow);
     setText('hero-headline-1', s.heroHeadline1);
-    setText('hero-headline-2', s.heroHeadline2);
+    renderHeroSecondLine(s.heroHeadline2);
     setText('hero-copy', s.heroCopy);
 
     setText('subscriber-count', s.youtubeSubscriberCount);
@@ -55,15 +70,8 @@ async function loadSettings() {
     if (s.chigzChannelDisplayUrl) setText('channel-display-label', s.chigzChannelDisplayUrl);
     if (s.chigzChannelUrl) setHref('chigz-channel-link', s.chigzChannelUrl);
 
-    if (s.heroPortraitImage) {
-      const portrait = document.getElementById('hero-portrait-image');
-      const portraitUrl = safeUrl(s.heroPortraitImage);
-      if (portrait && portraitUrl) portrait.src = portraitUrl;
-    }
-
     setText('deals-kicker', s.dealsKicker);
     setText('deals-title', s.dealsTitle);
-    setText('deals-description', s.dealsDescription);
     setText('picks-kicker', s.picksKicker);
     setText('picks-title', s.picksTitle);
     setText('picks-description', s.picksDescription);
@@ -102,7 +110,6 @@ function getYouTubeVideoId(url) {
       if (['shorts', 'embed', 'live'].includes(parts[0])) return parts[1] || '';
     }
   } catch (_) {}
-
   const match = String(url).match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|shorts\/|embed\/|live\/))([A-Za-z0-9_-]{6,})/i);
   return match ? match[1] : '';
 }
@@ -176,23 +183,25 @@ function enableClickToPlay() {
 
 function applySearch(query) {
   const normalized = String(query || '').trim().toLowerCase();
-  const cards = [...document.querySelectorAll('.product-card')];
 
-  cards.forEach(card => {
+  document.querySelectorAll('.product-card').forEach(card => {
     const haystack = card.dataset.search || '';
-    card.classList.toggle('search-hidden', normalized && !haystack.includes(normalized));
+    card.classList.toggle('search-hidden', Boolean(normalized) && !haystack.includes(normalized));
   });
 
   document.querySelectorAll('.product-grid').forEach(grid => {
-    const visible = [...grid.querySelectorAll('.product-card')].some(card => !card.classList.contains('search-hidden'));
-    let empty = grid.nextElementSibling;
-    if (!empty || !empty.classList.contains('search-empty')) {
-      empty = document.createElement('div');
-      empty.className = 'search-empty';
-      empty.textContent = 'No matching products in this section.';
-      grid.insertAdjacentElement('afterend', empty);
+    const cards = [...grid.querySelectorAll('.product-card')];
+    if (!cards.length) return;
+    const anyVisible = cards.some(card => !card.classList.contains('search-hidden'));
+
+    let msg = grid.nextElementSibling;
+    if (!msg || !msg.classList.contains('search-empty')) {
+      msg = document.createElement('div');
+      msg.className = 'search-empty';
+      msg.textContent = 'No matching products in this section.';
+      grid.insertAdjacentElement('afterend', msg);
     }
-    empty.classList.toggle('visible', Boolean(normalized) && !visible);
+    msg.classList.toggle('visible', Boolean(normalized) && !anyVisible);
   });
 }
 

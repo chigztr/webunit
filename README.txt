@@ -1,26 +1,22 @@
-WEBUNIT COMPLETE DESIGN FIX
+WEBUNIT — MOCKUP MATCH FIX
 ===========================
 
-This update fixes the missing design elements and rebuilds the homepage to match
-the approved "WEBUNIT by Chigz" direction.
+This update specifically corrects the oversized / mismatched homepage and
+brings the live site much closer to the approved mockup.
 
-WHAT IS NOW INCLUDED
---------------------
-- WEBUNIT by Chigz logo at the very top
-- Handwritten Chigz-style logo treatment
-- Functional search box in the header
-- Main hero with the real uploaded Chigz face
-- "Real tech. Real tests. Real opinions." hero styling
-- Browse Picks button + handwritten upgrade note
-- Manual YouTube subscriber and total-view stats panel
-- Quick category tiles
-- Chigz quote/signature panel
-- Improved Today's Deals heading and View All button
-- Trust ribbon below the deal cards
-- Existing CMS-driven product cards
-- Existing Static Image / YouTube Video option
-- Fixed centered YouTube play button
-- Mobile responsive layout
+FIXED
+-----
+- Hero is now the same compact proportion as the approved mockup
+- Uses the approved Chigz face/artwork on the right side
+- Removes the duplicate "Deals I'd actually" wording
+- Only "recommend." is highlighted blue
+- WEBUNIT by Chigz logo remains at the top
+- Search box remains
+- Stats panel now sits across the bottom of the hero like the mockup
+- Category tiles sit directly below the hero
+- Deals heading/card sizing is much closer to the mockup
+- Trust strip remains under the deals
+- Existing CMS products, images, affiliate links and YouTube video cards remain
 
 UPLOAD / REPLACE
 ----------------
@@ -31,21 +27,12 @@ Replace:
 - admin/config.yml
 
 Add / replace:
-- images/chigz-hero.png
+- images/chigz-tech-hero-art.png
 
-IMPORTANT
----------
-KEEP your existing:
+KEEP YOUR EXISTING:
 - products.json
 - settings.json
 - images/uploads/
 - _headers
 
-That preserves your current products, affiliate links and site settings.
-
-NEW CMS OPTION
---------------
-Site Settings now includes "Hero Portrait Image", so in future you can replace
-the Chigz image without editing code.
-
-The bundled images/chigz-hero.png is used automatically if that CMS field is blank.
+This keeps your live CMS data intact.
