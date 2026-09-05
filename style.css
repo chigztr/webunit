@@ -540,3 +540,466 @@ footer{padding:8px 0 42px}
   .trust-row>div+div{border-left:0;border-top:1px solid #e2e8f0}
   .cta-card{padding:25px 22px}
 }
+
+
+/* =========================================================
+   MOBILE CLEANUP + READABILITY OVERRIDES
+   ========================================================= */
+
+@media(max-width:900px){
+
+  /* Clean mobile flow */
+  .hero{
+    height:auto;
+    min-height:0;
+    overflow:visible;
+    display:flex;
+    flex-direction:column;
+    background:linear-gradient(180deg,#f8fbff 0%,#eef5ff 100%);
+  }
+
+  .hero::after{display:none}
+
+  .hero-inner{
+    order:1;
+    width:100%;
+    height:auto;
+    position:relative;
+  }
+
+  .hero-copy{
+    width:100%;
+    padding:32px 0 28px;
+  }
+
+  .hero-line-2{white-space:normal}
+
+  /* Clean artwork — no duplicate stats baked into image */
+  .hero-art{
+    order:2;
+    position:relative;
+    top:auto;
+    right:auto;
+    width:100%;
+    height:auto;
+    aspect-ratio:866 / 211;
+    overflow:hidden;
+    background:#08275b;
+  }
+
+  .hero-art picture,
+  .hero-art img{
+    display:block;
+    width:100%;
+    height:100%;
+  }
+
+  .hero-art img{
+    object-fit:cover;
+    object-position:center;
+  }
+
+  /* Stats in normal flow, below image */
+  .stats-panel{
+    order:3;
+    position:relative;
+    left:auto;
+    bottom:auto;
+    transform:none;
+    width:calc(100% - 30px);
+    min-height:0;
+    margin:16px auto 24px;
+    padding:14px 16px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:11px 12px;
+    border-radius:18px;
+    z-index:12;
+  }
+
+  .channel-link{
+    grid-column:1 / -1;
+    width:100%;
+    padding-bottom:11px;
+    border-bottom:1px solid #e1e8f1;
+  }
+
+  .channel-link strong{
+    font-size:14px;
+    overflow:visible;
+    text-overflow:clip;
+  }
+
+  .panel-divider{display:none}
+
+  .stat-box{
+    justify-content:center;
+    padding:4px 0;
+  }
+
+  .stat-box + .stat-box{
+    border-left:1px solid #e1e8f1;
+  }
+
+  .stat-box strong{font-size:21px}
+  .stat-box small{font-size:10.5px}
+
+  /* General readability */
+  .hero-copy>p{
+    font-size:15px;
+    line-height:1.6;
+  }
+
+  .category{
+    font-size:12.5px;
+  }
+
+  .quote-card>span:nth-child(2){
+    font-size:11.5px;
+  }
+
+  .section-kicker{
+    font-size:11px;
+  }
+
+  .deals-title-row p,
+  .section-head>p{
+    font-size:14px;
+    line-height:1.55;
+  }
+
+  .product-card h3{
+    font-size:20px;
+  }
+
+  .product-card p{
+    font-size:14.5px;
+    line-height:1.5;
+  }
+
+  .product-meta{
+    font-size:12px;
+  }
+
+  .badge{
+    font-size:10.5px;
+  }
+
+  .product-actions a{
+    min-height:43px;
+    font-size:12.5px;
+  }
+
+  .trust-row>div{
+    font-size:11.5px;
+    line-height:1.45;
+  }
+
+  .cta-card>div>span{
+    font-size:11px;
+  }
+
+  .cta-card p{
+    font-size:14.5px;
+    line-height:1.55;
+  }
+
+  .cta-card>a{
+    font-size:13px;
+  }
+
+  .footer-grid p{
+    font-size:12.5px;
+  }
+}
+
+@media(max-width:650px){
+
+  .page-width{
+    width:calc(100% - 28px);
+  }
+
+  /* Header */
+  .nav{
+    min-height:72px;
+    gap:9px;
+  }
+
+  .brand-web,
+  .brand-unit{
+    font-size:22px;
+  }
+
+  .brand-by{
+    font-size:16px;
+  }
+
+  .brand-chigz{
+    font-size:27px;
+  }
+
+  .browse-btn{
+    height:44px;
+    padding:0 14px;
+    font-size:12px;
+  }
+
+  /* Hero text */
+  .hero-copy{
+    padding:34px 0 28px;
+  }
+
+  .hero-kicker{
+    font-size:11.5px;
+    letter-spacing:.14em;
+    line-height:1.45;
+  }
+
+  .hero h1{
+    font-size:41px;
+    line-height:.95;
+  }
+
+  .hero h1 em{
+    color:#004bbf;
+    text-shadow:none;
+  }
+
+  .hero-copy>p{
+    margin-top:18px;
+    font-size:16px;
+    line-height:1.6;
+  }
+
+  .hero-btn{
+    width:100%;
+    max-width:none;
+    height:52px;
+    font-size:15px;
+    border-radius:14px;
+  }
+
+  .upgrade-note{
+    display:none;
+  }
+
+  /* Hero artwork */
+  .hero-art{
+    height:auto;
+    aspect-ratio:866 / 211;
+  }
+
+  .hero-art img{
+    object-position:center;
+  }
+
+  /* Stats */
+  .stats-panel{
+    width:calc(100% - 28px);
+    margin:16px auto 28px;
+    padding:14px;
+    gap:12px;
+  }
+
+  .channel-link{
+    gap:10px;
+    padding-bottom:12px;
+  }
+
+  .channel-link svg{
+    width:38px;
+    height:28px;
+  }
+
+  .channel-link strong{
+    font-size:14px;
+  }
+
+  .stat-symbol{
+    font-size:20px;
+  }
+
+  .stat-symbol.eye{
+    font-size:24px;
+  }
+
+  .stat-box strong{
+    font-size:22px;
+  }
+
+  .stat-box small{
+    font-size:11px;
+  }
+
+  /* Category buttons */
+  .category-strip{
+    padding:10px 0 17px;
+  }
+
+  .category-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:10px;
+  }
+
+  .category,
+  .quote-card{
+    min-height:66px;
+    height:auto;
+  }
+
+  .category{
+    padding:10px;
+    gap:9px;
+    font-size:13px;
+  }
+
+  .category span{
+    font-size:21px;
+  }
+
+  .quote-card{
+    grid-column:span 2;
+    padding:12px 14px;
+  }
+
+  .quote-card>span:nth-child(2){
+    font-size:12.5px;
+    line-height:1.35;
+  }
+
+  .quote-card strong{
+    font-size:24px;
+  }
+
+  /* Section text */
+  .section{
+    padding:46px 0;
+  }
+
+  .section-kicker{
+    font-size:12px;
+    letter-spacing:.16em;
+  }
+
+  .deals-title-row h2,
+  .section-head h2{
+    font-size:42px;
+  }
+
+  .deals-title-row p,
+  .section-head>p{
+    font-size:15px;
+    line-height:1.58;
+  }
+
+  .view-all{
+    min-height:44px;
+    padding:0 16px;
+    font-size:13px;
+  }
+
+  /* Product cards */
+  .product-grid,
+  .deals-grid{
+    grid-template-columns:1fr;
+    gap:20px;
+  }
+
+  .product-body{
+    padding:17px 17px 18px;
+    gap:10px;
+  }
+
+  .badge{
+    margin-top:-27px;
+    padding:6px 11px;
+    font-size:11px;
+  }
+
+  .product-card h3{
+    font-size:21px;
+  }
+
+  .product-card p{
+    font-size:15px;
+    line-height:1.55;
+  }
+
+  .product-meta{
+    font-size:12.5px;
+    line-height:1.45;
+  }
+
+  .product-actions{
+    gap:9px;
+  }
+
+  .product-actions a{
+    min-height:46px;
+    font-size:13px;
+  }
+
+  .youtube-play-label{
+    font-size:9px;
+    padding:6px 9px;
+  }
+
+  /* Trust strip */
+  .trust-row{
+    grid-template-columns:1fr;
+  }
+
+  .trust-row>div{
+    min-height:54px;
+    padding:10px 8px;
+    font-size:12.5px;
+    line-height:1.45;
+  }
+
+  .trust-row>div+div{
+    border-left:0;
+    border-top:1px solid #e2e8f0;
+  }
+
+  .trust-row span{
+    font-size:20px;
+  }
+
+  /* CTA */
+  .cta-card{
+    padding:28px 24px;
+  }
+
+  .cta-card>div>span{
+    font-size:12px;
+  }
+
+  .cta-card h2{
+    font-size:34px;
+    line-height:1.05;
+  }
+
+  .cta-card p{
+    font-size:15.5px;
+    line-height:1.6;
+  }
+
+  .cta-card>a{
+    width:100%;
+    min-height:46px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:14px;
+  }
+
+  /* Footer */
+  .footer-grid p{
+    font-size:13.5px;
+    line-height:1.65;
+  }
+
+  .footer-links{
+    gap:10px;
+  }
+}

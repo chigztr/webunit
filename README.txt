@@ -1,42 +1,47 @@
-WEBUNIT CMS TEXT FIX
-====================
+WEBUNIT — MOBILE + TEXT READABILITY FIX
+========================================
 
-This patch fixes the Site Settings text fields not updating the live website.
+This version fixes the issues shown in the latest mobile screenshot.
 
-WHY IT HAPPENED
----------------
-The previous mockup-matching version intentionally locked the hero wording in
-the HTML so old CMS text could not break the design. That also meant publishing
-new text from the CMS had no effect.
-
-FIXED CMS FIELDS
-----------------
-These now update the live website again:
-- Hero Eyebrow
-- Hero Headline — Line 1
-- Hero Highlight Word / Phrase
-- Hero Description
-- YouTube subscriber count
-- YouTube total views
-- Deals text
-- Chigz Picks text
-- Smartphones text
-- Creator Gear text
-- Home Tech text
-- Reviews CTA text/button
-- Footer text and links
-
-The final word of the Hero Highlight Word / Phrase stays blue so the approved
-design style is preserved.
+FIXED
+-----
+1. Removed the duplicate/baked-in subscriber + views graphics from the hero image.
+2. Mobile hero now uses a clean crop from the approved design.
+3. Correct mobile order stays:
+   - Header
+   - Hero text
+   - Hero artwork
+   - YouTube / subscriber / views card
+   - Category buttons
+4. Increased small text sizes throughout the mobile site:
+   - Hero description
+   - Stats labels
+   - Category buttons
+   - Section descriptions
+   - Product descriptions
+   - Product metadata
+   - Deal badges
+   - Buy / Watch Review buttons
+   - Trust strip
+   - CTA
+   - Footer
+5. Darkened the blue "recommend." text for better contrast.
+6. CMS text editing remains enabled from the previous fix.
 
 UPLOAD / REPLACE
 ----------------
 Replace:
 - index.html
-- app.js
 - style.css
+- app.js
 
-No settings.json or products.json replacement is needed.
+Add / replace:
+- images/chigz-hero-mobile.jpg
 
-After Cloudflare deploys, publish a small text change in the CMS and reload the
-site. The change should now appear.
+KEEP:
+- products.json
+- settings.json
+- admin/config.yml
+- _headers
+- images/uploads/
+- images/chigz-hero-final.png
