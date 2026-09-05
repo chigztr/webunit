@@ -125,12 +125,7 @@ function renderProductMedia(product) {
     return `
       <button class="youtube-media" type="button" data-video-id="${escapeHtml(videoId)}" aria-label="Play ${name} review">
         <img src="${escapeHtml(poster)}" alt="${name} video thumbnail" loading="lazy" decoding="async"${fallbackAttr}>
-        <span class="youtube-play" aria-hidden="true">
-          <svg viewBox="0 0 68 48" role="img">
-            <path d="M66.52 7.74a8 8 0 0 0-5.63-5.66C55.92.75 34 .75 34 .75S12.08.75 7.11 2.08A8 8 0 0 0 1.48 7.74C.15 12.73.15 24 .15 24s0 11.27 1.33 16.26a8 8 0 0 0 5.63 5.66C12.08 47.25 34 47.25s21.92 0 26.89-1.33a8 8 0 0 0 5.63-5.66C67.85 35.27 67.85 24 67.85 24s0-11.27-1.33-16.26Z"></path>
-            <path class="youtube-play-triangle" d="M27 34.5 45 24 27 13.5Z"></path>
-          </svg>
-        </span>
+        <span class="youtube-play" aria-hidden="true"><span class="youtube-play-triangle"></span></span>
         <span class="youtube-play-label">Play review</span>
       </button>
     `;

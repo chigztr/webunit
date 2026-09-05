@@ -1,14 +1,17 @@
-WEBUNIT — YOUTUBE ICON + LABEL UPDATE
-=====================================
+WEBUNIT — YOUTUBE PLAY BUTTON FIX
+=================================
 
-The top stats strip now displays:
+This fixes the half/cut YouTube play button on video product cards.
 
-[YouTube icon] YouTube.com/@ChigzTech
-
-The whole label is clickable and opens the YouTube channel.
+The SVG has been replaced with a clean CSS-drawn YouTube-style button:
+- full red rounded rectangle
+- centred white play triangle
+- subtle shadow
+- hover animation
 
 REPLACE ONLY:
 - index.html
 - style.css
+- app.js
 
-No CMS or product files need changing.
+No CMS, products.json, settings.json or images need changing.
