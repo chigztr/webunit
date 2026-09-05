@@ -98,14 +98,15 @@
       "image": ""
     },
     {
-      "category": "creator",
-      "name": "Your Main Camera",
       "badge": "Creator Gear",
-      "description": "Replace this with the camera or phone you currently use most for filming.",
       "meta": "Used by Chigz Tech Reviews",
-      "affiliate": "#",
+      "name": "Main Camera",
+      "affiliate": "https://amzn.to/3UYeLbH",
+      "media_type": "image",
       "review": "#",
-      "image": ""
+      "image": "/images/uploads/815edw-fqs._ac_sl1500_.jpg",
+      "description": "Panasonic Lumix GH5",
+      "category": "creator"
     },
     {
       "affiliate": "https://amzn.to/4qYLMR6",
