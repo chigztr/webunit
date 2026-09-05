@@ -118,7 +118,7 @@ a{color:inherit}
 }
 .hero-line{display:block}
 .hero-line-2{white-space:nowrap}
-.hero h1 em{font-style:normal;color:#005bd8;text-shadow:0 1px 0 rgba(255,255,255,.55)}
+.hero h1 em{font-style:normal;color:#0052cc;text-shadow:0 1px 0 rgba(255,255,255,.6)}
 .hero-copy>p{
   margin:13px 0 0;
   color:#3e5571;
@@ -382,34 +382,42 @@ footer{padding:8px 0 42px}
   .nav-right{justify-self:end}
   .search-box{width:240px}
 
-  /* Mobile hero becomes normal document flow — no overlapping panels */
+  /* Correct mobile stacking: text -> image -> stats */
   .hero{
     height:auto;
     min-height:0;
     overflow:visible;
-    background:linear-gradient(180deg,#fff 0%,#f3f8ff 100%);
+    display:flex;
+    flex-direction:column;
+    background:linear-gradient(180deg,#f8fbff 0%,#eef5ff 100%);
   }
   .hero::after{display:none}
+
   .hero-inner{
+    order:1;
+    width:100%;
     height:auto;
     position:relative;
   }
   .hero-copy{
     width:100%;
-    padding:30px 0 30px;
+    padding:30px 0 26px;
   }
   .hero-line-2{white-space:normal}
+
   .hero-art{
+    order:2;
     position:relative;
     top:auto;
     right:auto;
     width:100%;
     height:225px;
     overflow:hidden;
-    background:#072454;
+    background:#08275b;
   }
   .hero-art picture,
   .hero-art img{
+    display:block;
     width:100%;
     height:100%;
   }
@@ -418,15 +426,15 @@ footer{padding:8px 0 42px}
     object-position:center center;
   }
 
-  /* Compact stats card sits under the hero image instead of covering it */
   .stats-panel{
+    order:3;
     position:relative;
     left:auto;
     bottom:auto;
     transform:none;
     width:calc(100% - 28px);
     min-height:0;
-    margin:-22px auto 18px;
+    margin:14px auto 18px;
     padding:12px 14px;
     display:grid;
     grid-template-columns:1fr 1fr;
@@ -482,15 +490,15 @@ footer{padding:8px 0 42px}
   .search-box{display:none}
   .browse-btn{height:38px;padding:0 11px;font-size:9.5px}
 
-  .hero-copy{padding:28px 0 28px}
+  .hero-copy{padding:28px 0 24px}
   .hero-kicker{font-size:9px;letter-spacing:.16em}
   .hero h1{
     font-size:39px;
     line-height:.94;
   }
   .hero h1 em{
-    color:#0055cc;
-    text-shadow:0 1px 0 #fff;
+    color:#004fc7;
+    text-shadow:0 1px 0 rgba(255,255,255,.7);
   }
   .hero-copy>p{
     font-size:13px;
@@ -504,15 +512,15 @@ footer{padding:8px 0 42px}
   .upgrade-note{display:none}
 
   .hero-art{
-    height:215px;
+    height:210px;
   }
   .hero-art img{
-    object-position:52% center;
+    object-position:44% center;
   }
 
   .stats-panel{
     width:calc(100% - 24px);
-    margin-top:-18px;
+    margin:12px auto 16px;
     padding:12px;
   }
   .channel-link svg{width:35px;height:25px}

@@ -1,29 +1,26 @@
-WEBUNIT MOBILE FIX
-==================
+WEBUNIT MOBILE ORDER FIX
 
-This is a targeted patch for the latest desktop design.
+Fixes the exact mobile issue shown in the latest screenshot.
 
-FIXES:
-- Mobile hero no longer has a large empty gap
-- Hero image no longer overlaps awkwardly
-- YouTube / subscriber / view stats are now a compact card under the hero image
-- Category buttons no longer sit underneath the stats card
-- Dedicated mobile hero crop removes the ghosted headline from the artwork
-- "recommend." uses a darker blue for better contrast
-- Desktop layout is left unchanged
+Mobile order is now:
+1. Header
+2. Hero headline / description / Browse Picks
+3. Clean hero artwork
+4. YouTube / Subscribers / Total Views card
+5. Category buttons
+
+Also fixed:
+- Removed baked-in duplicate stats/text from the mobile hero artwork
+- Better face / artwork crop on phones
+- Darker blue 'recommend.' for stronger contrast
+- Stats card no longer overlaps the hero image
+- Desktop layout is unchanged
 
 REPLACE:
 - index.html
 - style.css
 
-ADD:
+ADD / REPLACE:
 - images/chigz-hero-mobile.jpg
 
-KEEP EVERYTHING ELSE, including:
-- app.js
-- products.json
-- settings.json
-- admin/config.yml
-- images/chigz-hero-final.png
-- images/uploads/
-- _headers
+Keep all other files unchanged.
