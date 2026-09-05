@@ -1,17 +1,16 @@
-WEBUNIT FIXED PREMIUM REDESIGN — MANUAL YOUTUBE STATS
+WEBUNIT — YOUTUBE CHANNEL LABEL UPDATE
+======================================
 
-This fixes the broken layout in the previous ZIP and also cache-busts style.css and app.js so the main webunit.co.uk URL cannot keep mixing new HTML with an older stylesheet.
+The top stats strip now shows this clickable text on the left:
 
-Replace these four files:
+Youtube.com/@ChigzTech
+
+It links to:
+http://Youtube.com/@ChigzTech
+
+REPLACE ONLY:
 - index.html
 - style.css
 - app.js
-- admin/config.yml
 
-Do not replace products.json, settings.json, images, or _headers.
-
-Manual CMS fields remain:
-- YouTube Subscriber Count
-- YouTube Total View Count
-
-After Cloudflare finishes deploying, hard-refresh webunit.co.uk once.
+No CMS/product files need changing.
