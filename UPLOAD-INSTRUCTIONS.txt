@@ -1,0 +1,38 @@
+WEBUNIT MEDIA CHOICE UPDATE
+===========================
+
+This update adds a Card Media option to every product:
+
+- Static Image
+- YouTube Video — click to play
+
+FILES TO REPLACE
+----------------
+1. Replace app.js in the ROOT of the GitHub repo.
+2. Replace admin/config.yml inside the admin folder.
+
+No other files need changing.
+
+HOW IT WORKS
+------------
+Static Image:
+- Uploaded Product Image is shown.
+- If Product Image is blank and a YouTube Review Link exists, the YouTube thumbnail is used automatically.
+
+YouTube Video:
+- The card initially shows the uploaded Product Image as a custom poster.
+- If Product Image is blank, the YouTube thumbnail is used automatically.
+- A YouTube play button appears.
+- The actual YouTube player only loads after the visitor clicks Play, keeping the page fast.
+- The existing Watch Review button remains.
+
+EXISTING PRODUCTS
+-----------------
+Existing products without a Card Media value automatically behave as Static Image, so nothing breaks after this update.
+
+AFTER UPLOAD
+------------
+Wait for Cloudflare Pages to redeploy, then open:
+https://webunit.co.uk/admin/
+
+Edit a product and you will see the new Card Media dropdown.

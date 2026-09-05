@@ -13,7 +13,6 @@ media_folder: "images/uploads"
 public_folder: "/images/uploads"
 
 publish_mode: simple
-
 collections:
   - label: "WebUnit Products"
     name: "webunit_products"
@@ -75,13 +74,22 @@ collections:
                 widget: "string"
                 required: false
                 default: "#"
+                hint: "Paste a YouTube URL. This powers Watch Review, automatic thumbnails and YouTube Video mode."
+
+              - label: "Card Media"
+                name: "media_type"
+                widget: "select"
+                default: "image"
+                options:
+                  - { label: "Static Image", value: "image" }
+                  - { label: "YouTube Video — click to play", value: "video" }
+                hint: "Static Image shows the uploaded image, or automatically uses the YouTube thumbnail if no image is uploaded. YouTube Video shows a play button and only loads the embedded video after a visitor clicks it."
 
               - label: "Product Image"
                 name: "image"
                 widget: "image"
                 required: false
-                hint: "Upload a WebP, JPG or PNG. Landscape/transparent product images work best."
-
+                hint: "Optional. In Static Image mode this is the card image. In YouTube Video mode it becomes the custom video poster; leave blank to use the YouTube thumbnail automatically."
 
   - label: "Site Settings"
     name: "site_settings"
