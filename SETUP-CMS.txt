@@ -1,93 +1,248 @@
-WEBUNIT PROPER CMS — SETUP
+WEBUNIT CMS + CLOUDFLARE SETUP NOTES
+==================================
 
-This version uses:
-- Netlify for hosting/deployments
-- GitHub as the site repository
-- Decap CMS for the /admin editor
-- Netlify's GitHub OAuth provider for login
+This file documents the current production setup for WebUnit.co.uk.
 
-WHY GITHUB IS REQUIRED
-The CMS needs a repository it can write your edits to.
-When you click Publish in the CMS, Decap commits the change to GitHub.
-Netlify detects the commit and automatically redeploys WebUnit.
+1. LIVE ARCHITECTURE
+--------------------
 
-1. CREATE A GITHUB REPOSITORY
-Create a private or public repository named:
-webunit
-
-Upload ALL files from this package to the repository root.
-
-2. EDIT ONE LINE
-Open:
-admin/config.yml
-
-The CMS is already configured for:
-repo: chigztr/webunit
-
-No repo-path edit is required.
-
-3. CONNECT NETLIFY TO GITHUB
-In Netlify, open your WebUnit project.
-Connect/import the GitHub repository as the site's repository.
-Publish directory should be the repository root.
-There is no build command required because this is a plain static site.
-
-4. CREATE A GITHUB OAUTH APP
-In GitHub:
-Settings > Developer settings > OAuth Apps > New OAuth App
-
-Application name:
-WebUnit CMS
-
-Homepage URL:
+Website:
 https://webunit.co.uk
 
-Authorization callback URL:
-https://api.netlify.com/auth/done
-
-Create the app, then generate a Client Secret.
-
-5. ADD GITHUB AUTHENTICATION TO NETLIFY
-In your Netlify project:
-Project configuration > Access & security > OAuth > Authentication providers
-
-Install/add GitHub.
-Enter the GitHub OAuth App Client ID and Client Secret.
-
-6. USE YOUR CMS
-Go to:
+CMS:
 https://webunit.co.uk/admin/
 
-Choose Login with GitHub.
+Repository:
+https://github.com/chigztr/webunit
 
-Open:
-WebUnit Products > Products & Deals
+Hosting:
+Cloudflare Pages
 
-You can then:
-- Add products
-- Delete products
-- Drag/reorder products
-- Change sections
-- Upload product images
-- Add affiliate links
-- Add YouTube review links
-- Edit descriptions/badges/scores
+Authentication:
+Cloudflare Worker + GitHub OAuth
 
-Click Publish.
+Email:
+IONOS
 
-That writes the update to GitHub and triggers a fresh Netlify deploy automatically.
+DNS:
+Cloudflare
 
-SECURITY
-Only GitHub users with push/write access to the WebUnit repository can publish through this backend.
-Keep the GitHub repository access restricted to people you trust.
 
-PRODUCT IMAGES
-Images uploaded in the CMS go to:
-images/uploads/
+2. CLOUDFLARE PAGES
+-------------------
 
-They are referenced publicly as:
-/images/uploads/filename.jpg
+Project name:
+webunit
 
-IMPORTANT AFFILIATE NOTE
-The page contains a general affiliate disclosure.
-Still follow any exact disclosure/link-format rules required by each affiliate programme you join.
+Production branch:
+main
+
+Pages URL:
+https://webunit-5r9.pages.dev
+
+Build configuration:
+- Framework preset: None
+- Build command: leave blank
+- Build output directory: .
+- Root directory: leave blank
+
+Git integration:
+GitHub repository chigztr/webunit
+
+Every commit to main automatically creates a production deployment.
+
+
+3. CUSTOM DOMAINS
+-----------------
+
+Primary domain:
+webunit.co.uk
+
+Secondary domain:
+www.webunit.co.uk
+
+WWW is configured to permanently redirect to the root domain.
+
+Expected behaviour:
+
+https://www.webunit.co.uk/example
+→
+https://webunit.co.uk/example
+
+SSL is enabled through Cloudflare.
+
+
+4. CMS AUTHENTICATION
+---------------------
+
+Decap CMS uses the GitHub backend.
+
+Authentication is handled by this Cloudflare Worker:
+
+https://webunit-cms-auth.cvyas.workers.dev
+
+Expected Worker endpoints:
+
+/auth
+/callback
+
+Cloudflare Worker runtime variables/secrets:
+
+GITHUB_CLIENT_ID
+GitHub OAuth Client ID
+
+GITHUB_CLIENT_SECRET
+GitHub OAuth Client Secret
+This must be stored as a Cloudflare Secret.
+
+Never commit the GitHub Client Secret to GitHub.
+
+
+5. GITHUB OAUTH APP
+-------------------
+
+GitHub OAuth application:
+WebUnit CMS
+
+Homepage:
+https://webunit.co.uk
+
+Required callback:
+https://webunit-cms-auth.cvyas.workers.dev/callback
+
+The old Netlify callback is not required once Cloudflare authentication has been
+fully tested and confirmed.
+
+
+6. DECAP CMS
+------------
+
+CMS configuration file:
+admin/config.yml
+
+The backend should point to:
+
+repo:
+chigztr/webunit
+
+branch:
+main
+
+Authentication base URL:
+https://webunit-cms-auth.cvyas.workers.dev
+
+Authentication endpoint:
+auth
+
+CMS sections currently include:
+- WebUnit Products / Products & Deals
+- Site Settings / Homepage & Links
+
+
+7. SITE DATA
+------------
+
+products.json
+Stores products, deals, categories, descriptions, links and product images.
+
+settings.json
+Stores editable homepage text, footer content, social links, YouTube link,
+ChigzTech link, contact details and other site-wide settings.
+
+
+8. PRODUCT IMAGE BEHAVIOUR
+--------------------------
+
+Priority:
+
+1. Manually uploaded product image
+2. YouTube thumbnail generated from YouTube Review Link
+3. Default/fallback placeholder
+
+YouTube thumbnails are styled to fill the product-card image area.
+
+
+9. CLOUDFLARE HEADERS
+---------------------
+
+File:
+_headers
+
+Purpose:
+- Prevent /admin/ from being indexed
+- Disable caching for the CMS
+- Revalidate products.json
+- Revalidate settings.json
+- Add basic browser security headers
+
+
+10. EMAIL / IONOS
+-----------------
+
+The domain is registered with IONOS and email remains with IONOS.
+
+Cloudflare DNS must retain the IONOS mail records.
+
+Important records include:
+- MX records
+- SPF TXT
+- DMARC CNAME
+- autodiscover CNAME
+- s1-ionos._domainkey
+- s2-ionos._domainkey
+- s42582890._domainkey
+
+Do not delete these when changing website DNS records.
+
+
+11. PUBLISHING A CHANGE
+-----------------------
+
+Normal workflow:
+
+1. Visit https://webunit.co.uk/admin/
+2. Login with GitHub.
+3. Make the required edit.
+4. Click Publish.
+5. Confirm the change appears as a new GitHub commit.
+6. Cloudflare Pages deploys automatically.
+7. Refresh https://webunit.co.uk
+
+If the Pages URL updates but the custom domain initially looks old, test a private
+browser window or another network before changing DNS. Browser/DNS caching may be
+the cause.
+
+
+12. TROUBLESHOOTING
+-------------------
+
+CMS login fails:
+- Check the Cloudflare Worker is deployed.
+- Check GITHUB_CLIENT_ID exists.
+- Check GITHUB_CLIENT_SECRET exists as a Secret.
+- Check the GitHub OAuth callback is correct.
+- Check admin/config.yml points to the Worker.
+
+CMS publishes but website does not update:
+- Check GitHub for a new commit.
+- Check Cloudflare Pages Deployments.
+- Test the pages.dev URL.
+- Hard refresh/private-browser test.
+
+Email fails after DNS changes:
+- Verify MX, SPF, DKIM, DMARC and autodiscover records in Cloudflare DNS.
+
+
+13. NETLIFY
+-----------
+
+Netlify is no longer part of the live production architecture.
+
+The old netlify.toml file can be deleted after Cloudflare Pages and CMS have been
+tested successfully.
+
+The old Netlify project may be retained temporarily as a backup and later removed.
+
+
+Last updated:
+September 2026
