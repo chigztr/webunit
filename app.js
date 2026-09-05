@@ -231,18 +231,12 @@ async function loadProducts(){
     const products=Array.isArray(data)?data:(data.products||[]);
 
     const deals=products.filter(p=>p.category==='deals');
-    const featured=document.getElementById('featured-deal');
     const dealsGrid=document.getElementById('all-deals');
 
-    if(featured){
-      if(deals.length)featured.innerHTML=featuredDealHtml(deals[0]);
-      else featured.innerHTML='';
-    }
     if(dealsGrid){
-      const rest=deals.slice(1);
-      dealsGrid.innerHTML=rest.length
-        ? rest.map(productCardHtml).join('')
-        : '';
+      dealsGrid.innerHTML=deals.length
+        ? deals.map(productCardHtml).join('')
+        : `<div class="empty-state">No deals added here yet.</div>`;
     }
 
     document.querySelectorAll('[data-category]:not(#all-deals)').forEach(grid=>{

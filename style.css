@@ -272,3 +272,167 @@ footer{padding:8px 0 42px;background:#fff}
   .footer-links{justify-content:flex-start}
   .footer-grid p{font-size:12px}
 }
+
+
+/* ==========================================================
+   SEPT 5 READABILITY + EQUAL DEAL CARDS UPDATE
+   ========================================================== */
+
+/* All product/deal sections use the same navy background as Chigz Picks */
+.deal-zone{
+  background:linear-gradient(135deg,#071a35,#0a2d5d) !important;
+  color:#fff;
+  border-top:1px solid rgba(255,255,255,.06);
+}
+.deal-zone .section-kicker{color:#7eb8ff}
+.deal-zone .section-head h2{color:#fff}
+.deal-zone .section-head p{color:#c2d0e0}
+.deal-zone .text-link{
+  color:#dcecff;
+  border-bottom-color:rgba(220,236,255,.45);
+}
+
+/* Every deal card is equal size. No featured/big card. */
+.deals-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr)) !important;
+  gap:18px;
+  align-items:stretch;
+}
+.deals-grid .product-card{
+  height:100%;
+}
+
+/* Product cards on all navy deal sections */
+.deal-zone .product-card{
+  background:#102b50;
+  border-color:rgba(255,255,255,.13);
+  box-shadow:0 8px 22px rgba(0,0,0,.12);
+}
+.deal-zone .product-card:hover{
+  box-shadow:0 16px 34px rgba(0,0,0,.19);
+}
+.deal-zone .product-card h3{color:#fff}
+.deal-zone .product-card p{color:#c3d0df}
+.deal-zone .product-meta{color:#e2ebf5}
+.deal-zone .review-link{
+  border-color:rgba(255,255,255,.22);
+  background:rgba(255,255,255,.06);
+  color:#fff;
+}
+.deal-zone .empty-state{
+  background:#102b50;
+  border-color:rgba(255,255,255,.18);
+  color:#c9d6e4;
+}
+
+/* Trust cards now belong visually to the dark deal section */
+.deal-zone .trust-grid>div{
+  background:#102b50;
+  border-color:rgba(255,255,255,.13);
+}
+.deal-zone .trust-grid strong{color:#fff}
+.deal-zone .trust-grid small{color:#c2cfde}
+.deal-zone .trust-grid>div>span{
+  background:rgba(48,142,255,.15);
+  color:#73b3ff;
+}
+
+/* -------- READABILITY: GLOBAL SMALL TEXT -------- */
+
+/* Header */
+.desktop-nav a{font-size:14px}
+.search-box input{font-size:12.5px}
+.header-cta{font-size:12.5px}
+
+/* Hero */
+.eyebrow{font-size:11.5px}
+.hero-copy>p{font-size:16.5px}
+.button{font-size:14px}
+.hero-proof strong{font-size:12.5px}
+.hero-proof small{font-size:11.5px}
+.hero-media-caption{font-size:11px}
+.hero-media-caption strong{font-size:11.5px}
+
+/* YouTube stats */
+.channel-link strong{font-size:14px}
+.channel-link small{font-size:11.5px}
+.channel-stat strong{font-size:22px}
+.channel-stat small{font-size:11.5px}
+
+/* Categories */
+.category b{font-size:13px}
+.category small{font-size:11px}
+
+/* Section headings/descriptions */
+.section-kicker{font-size:11.5px}
+.section-head p{font-size:15px;line-height:1.58}
+.text-link{font-size:12.5px}
+
+/* Product cards */
+.product-card h3{font-size:20px}
+.product-card p{font-size:14.5px;line-height:1.55}
+.product-meta{font-size:12.5px;line-height:1.4}
+.badge{font-size:10.5px;padding:6px 10px}
+.product-actions a{min-height:43px;font-size:12.5px}
+
+/* Trust cards */
+.trust-grid strong{font-size:13px}
+.trust-grid small{font-size:12px;line-height:1.45}
+
+/* CTA/footer */
+.review-cta-card>div>span{font-size:11.5px}
+.review-cta-card p{font-size:15px}
+.review-cta-card>a{font-size:13px}
+.footer-grid p{font-size:13px}
+
+/* Remove any now-unused featured deal spacing */
+.featured-deal{display:none!important}
+
+/* Tablet */
+@media(max-width:1050px){
+  .deals-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+  }
+  .desktop-nav a{font-size:13.5px}
+}
+
+/* Mobile readability */
+@media(max-width:720px){
+  .eyebrow{font-size:11px}
+  .hero-copy>p{font-size:15.5px}
+  .button{font-size:14px}
+  .hero-proof strong{font-size:13px}
+  .hero-proof small{font-size:11.5px}
+
+  .channel-link strong{font-size:13.5px}
+  .channel-link small{font-size:11px}
+  .channel-stat strong{font-size:21px}
+  .channel-stat small{font-size:11px}
+
+  .category{min-width:165px}
+  .category b{font-size:13px}
+
+  .section-kicker{font-size:11px}
+  .section-head h2{font-size:38px}
+  .section-head p{font-size:15px}
+
+  .deals-grid,
+  .product-grid{
+    grid-template-columns:1fr !important;
+  }
+
+  .product-card h3{font-size:21px}
+  .product-card p{font-size:15px;line-height:1.55}
+  .product-meta{font-size:12.5px}
+  .product-actions a{min-height:45px;font-size:13px}
+
+  .trust-grid{
+    grid-template-columns:1fr !important;
+  }
+  .trust-grid strong{font-size:13.5px}
+  .trust-grid small{font-size:12.5px}
+
+  .review-cta-card p{font-size:15px}
+  .footer-grid p{font-size:13.5px}
+}
