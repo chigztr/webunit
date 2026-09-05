@@ -128,14 +128,15 @@
       "image": ""
     },
     {
-      "category": "home",
-      "name": "LG OLED evo C6",
       "badge": "TV Pick",
-      "description": "Premium OLED picture quality with outstanding gaming credentials.",
       "meta": "Chigz Tech Score: 92/100",
-      "affiliate": "#",
-      "review": "#",
-      "image": ""
+      "name": "LG OLED evo C6",
+      "affiliate": "https://amzn.to/46ajzxb",
+      "media_type": "video",
+      "review": "https://youtu.be/vfkVpjAJ5D8",
+      "image": "",
+      "description": "Premium OLED picture quality with outstanding gaming credentials.",
+      "category": "home"
     },
     {
       "category": "home",
