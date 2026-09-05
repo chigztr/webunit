@@ -1,20 +1,14 @@
-WEBUNIT — YOUTUBE LABEL FONT UPDATE
-===================================
+WEBUNIT — YOUTUBE ICON + LABEL UPDATE
+=====================================
 
-This update makes:
+The top stats strip now displays:
 
-Youtube.com/@ChigzTech
+[YouTube icon] YouTube.com/@ChigzTech
 
-match the visual weight of the YouTube subscriber/view counts:
-- larger
-- bold 900 weight
-- white
-- tighter spacing
-- subtle blue glow
-- blue hover state
+The whole label is clickable and opens the YouTube channel.
 
 REPLACE ONLY:
 - index.html
 - style.css
 
-app.js is included for convenience but does not require a functional change.
+No CMS or product files need changing.
