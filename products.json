@@ -62,24 +62,26 @@
       "image": ""
     },
     {
-      "category": "phones",
-      "name": "Samsung Galaxy S26 Ultra",
       "badge": "Best All-Rounder",
-      "description": "Excellent cameras, display and overall flagship versatility.",
       "meta": "Best for most flagship buyers",
-      "affiliate": "#",
-      "review": "#",
-      "image": ""
+      "name": "Samsung Galaxy S26 Ultra",
+      "affiliate": "https://amzn.to/40DXlke",
+      "media_type": "video",
+      "review": "https://youtu.be/0M9DL1nFGYw",
+      "image": "",
+      "description": "Excellent cameras, display and overall flagship versatility.",
+      "category": "phones"
     },
     {
-      "category": "phones",
-      "name": "POCO F9 Ultra",
       "badge": "Performance Pick",
-      "description": "Serious speed and gaming power without the usual flagship pricing.",
       "meta": "Best for performance/value",
-      "affiliate": "#",
-      "review": "#",
-      "image": ""
+      "name": "POCO F9 Ultra",
+      "affiliate": "https://amzn.to/4gPBDSe",
+      "media_type": "video",
+      "review": "https://youtu.be/1V66tfO0L9A",
+      "image": "",
+      "description": "Serious speed and gaming power without the usual flagship pricing.",
+      "category": "phones"
     },
     {
       "category": "phones",
@@ -147,8 +149,8 @@
       "badge": "Smart Home Pick",
       "description": "A strong robot vacuum option for automated everyday cleaning.",
       "meta": "Smart-home recommendation",
-      "affiliate": "#",
-      "review": "#",
+      "affiliate": "https://amzn.to/4hNJxxx",
+      "review": "https://youtu.be/Hu0G3TenTIo",
       "image": ""
     }
   ]
