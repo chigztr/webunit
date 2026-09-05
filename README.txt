@@ -1,20 +1,24 @@
-WEBUNIT — EXACT MOCKUP LAYOUT FIX
-==================================
+WEBUNIT — FINAL MOCKUP FIX
+===========================
 
-This version is rebuilt around the exact approved mockup you supplied.
+This revision fixes the specific problems visible in the 13:55 screenshot.
 
-Key differences from the previous version:
-- Hero height locked to the approved compact 306px desktop proportion
-- No duplicate headline from the old CMS hero text
-- "recommend." is the only blue-highlighted word
-- Right-side hero artwork is cropped directly from the approved mockup
-- YouTube/stats panel sits across the bottom centre of the hero
-- WEBUNIT by Chigz logo is at the top
-- Header search + Browse Picks button match the approved design
-- Category tiles and quote strip match the approved design structure
-- Today's Deals section uses four fixed desktop columns, matching the card size in the mockup
-- Trust row sits directly underneath the deals
-- Existing CMS products, images, affiliate links, video mode and manual YouTube stats remain
+WHAT WAS WRONG
+--------------
+- The hero had a hard 50/50 split instead of the soft overlap in the approved mockup.
+- The face/artwork crop was too zoomed.
+- The second headline wrapped onto a third line.
+- The stats panel was too wide and sat over the CTA area.
+- With only 3 live deal products, a forced 4-column grid left a large empty gap.
+
+WHAT IS FIXED
+-------------
+- Right-side artwork is rebuilt directly from the approved mockup at its correct proportions.
+- It fades into the white hero instead of creating a hard vertical split.
+- "Deals I’d actually recommend." stays on one desktop line.
+- The approved stats panel is narrower and centered correctly.
+- The actual 3 deal cards now fill the available width cleanly; when you add a 4th deal, the grid automatically becomes 4 columns.
+- Header, WEBUNIT by Chigz logo, search, category strip, CMS stats, video mode and trust row are retained.
 
 UPLOAD / REPLACE
 ----------------
@@ -24,13 +28,13 @@ Replace:
 - app.js
 
 Add / replace:
-- images/chigz-hero-art.png
+- images/chigz-hero-final.png
 
 KEEP:
 - products.json
 - settings.json
 - admin/config.yml
-- images/uploads/
 - _headers
+- images/uploads/
 
-This is intentional: your live CMS data stays untouched.
+After Cloudflare deploys, hard-refresh webunit.co.uk once.

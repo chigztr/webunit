@@ -36,8 +36,7 @@ async function loadSettings() {
     const meta = document.getElementById('meta-description');
     if (meta && s.metaDescription) meta.setAttribute('content', s.metaDescription);
 
-    // Keep the hero wording/layout locked to the approved mockup.
-    // Only the manually managed stats and links are loaded from CMS here.
+    // Keep the approved hero design locked so older CMS hero text cannot break the layout.
     setText('subscriber-count', s.youtubeSubscriberCount);
     setText('total-view-count', s.youtubeTotalViews);
     setHref('youtube-subs-link', s.youtubeUrl);
@@ -218,8 +217,10 @@ async function loadProducts() {
 async function init() {
   enableClickToPlay();
   enableSearch();
+
   const year = document.getElementById('year');
   if (year) year.textContent = new Date().getFullYear();
+
   await Promise.all([loadSettings(), loadProducts()]);
 }
 
