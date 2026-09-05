@@ -1,32 +1,21 @@
-WEBUNIT — MOBILE + TEXT READABILITY FIX
-========================================
+WEBUNIT — NEW RESPONSIVE DESIGN
+================================
 
-This version fixes the issues shown in the latest mobile screenshot.
+This is the new layout based on the latest approved design direction.
 
-FIXED
------
-1. Removed the duplicate/baked-in subscriber + views graphics from the hero image.
-2. Mobile hero now uses a clean crop from the approved design.
-3. Correct mobile order stays:
-   - Header
-   - Hero text
-   - Hero artwork
-   - YouTube / subscriber / views card
-   - Category buttons
-4. Increased small text sizes throughout the mobile site:
-   - Hero description
-   - Stats labels
-   - Category buttons
-   - Section descriptions
-   - Product descriptions
-   - Product metadata
-   - Deal badges
-   - Buy / Watch Review buttons
-   - Trust strip
-   - CTA
-   - Footer
-5. Darkened the blue "recommend." text for better contrast.
-6. CMS text editing remains enabled from the previous fix.
+DESIGN CHANGES
+--------------
+- Cleaner two-column desktop hero
+- Uses your real uploaded face/photo
+- Fully stacked mobile layout — no overlapping hero image/stats
+- Large readable typography on phones
+- Browse Picks + Watch Latest Video buttons
+- YouTube subscriber and total views card
+- First three CMS products automatically appear as mini hero product cards
+- Horizontal mobile category navigation
+- Larger product-card text and buttons on mobile
+- Existing product CMS, media type, YouTube click-to-play, affiliate links and manual stats remain compatible
+- Existing CMS hero / section / footer text remains editable
 
 UPLOAD / REPLACE
 ----------------
@@ -35,13 +24,14 @@ Replace:
 - style.css
 - app.js
 
-Add / replace:
-- images/chigz-hero-mobile.jpg
+Add:
+- images/chigz-portrait.jpg
 
-KEEP:
+KEEP your existing:
 - products.json
 - settings.json
 - admin/config.yml
 - _headers
 - images/uploads/
-- images/chigz-hero-final.png
+
+No CMS migration is required.

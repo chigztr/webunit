@@ -64,6 +64,7 @@ async function loadSettings() {
     setHref('youtube-subs-link', s.youtubeUrl);
     setHref('youtube-views-link', s.youtubeUrl);
     setHref('youtube-cta', s.youtubeUrl);
+    setHref('hero-video-link', s.youtubeUrl);
     setHref('footer-youtube', s.youtubeUrl);
 
     if (s.chigzChannelDisplayUrl) setText('channel-display-label', s.chigzChannelDisplayUrl);
@@ -95,6 +96,7 @@ async function loadSettings() {
     setText('reviews-description', s.reviewsDescription);
     setText('youtube-cta', s.reviewsButtonLabel);
     setHref('youtube-cta', s.youtubeUrl);
+    setHref('hero-video-link', s.youtubeUrl);
 
     // Footer.
     setText('footer-tagline', s.footerTagline);
@@ -166,6 +168,25 @@ function renderProductMedia(product) {
   return `<div class="product-placeholder">WEBUNIT</div>`;
 }
 
+
+function populateHeroProducts(products) {
+  const stack = document.getElementById('hero-product-stack');
+  if (!stack) return;
+
+  const useful = products.filter(p => p && p.name).slice(0, 3);
+  if (!useful.length) return;
+
+  stack.innerHTML = useful.map((p, i) => {
+    const videoThumb = getYouTubeThumbnail(p.review);
+    const src = safeUrl(p.image) || videoThumb;
+    const label = escapeHtml(p.name || 'Tech');
+    if (src) {
+      return `<div class="hero-product-placeholder hero-product-real"><img src="${escapeHtml(src)}" alt="" loading="eager"><span>${label}</span></div>`;
+    }
+    return `<div class="hero-product-placeholder">${label}</div>`;
+  }).join('');
+}
+
 function enableClickToPlay() {
   document.addEventListener('click', event => {
     const trigger = event.target.closest('.youtube-media[data-video-id]');
@@ -221,6 +242,7 @@ async function loadProducts() {
     if (!res.ok) return;
     const data = await res.json();
     const products = Array.isArray(data) ? data : (data.products || []);
+    populateHeroProducts(products);
 
     document.querySelectorAll('[data-category]').forEach(grid => {
       const category = grid.dataset.category;
