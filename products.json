@@ -1,169 +1,169 @@
 {
   "products": [
     {
-      "category": "deals",
-      "name": "POCO F9 Ultra",
       "badge": "Deal ",
-      "description": "Flagship-level performance at a price that makes sense when discounted.",
       "meta": "Add current deal details here",
+      "name": "POCO F9 Ultra",
       "affiliate": "https://bit.ly/4zOM8xL",
+      "media_type": "video",
       "review": "https://youtu.be/1V66tfO0L9A",
-      "image": "/images/uploads/c.png",
-      "media_type": "video"
+      "image": "",
+      "description": "Flagship-level performance at a price that makes sense when discounted.",
+      "category": "deals"
     },
     {
-      "category": "deals",
-      "name": "RayNeo GT Max",
       "badge": "Deal",
-      "description": "Immersive AR display glasses for movies, gaming and travel.",
       "meta": "Add current deal details here",
+      "name": "RayNeo GT Max",
       "affiliate": "https://amzn.to/4zS4he9",
+      "media_type": "image",
       "review": "#",
       "image": "/images/uploads/d.png",
-      "media_type": "image"
+      "description": "Immersive AR display glasses for movies, gaming and travel.",
+      "category": "deals"
     },
     {
-      "category": "deals",
-      "name": "Featured Deal",
       "badge": "Hot Deal",
-      "description": "Replace this with any genuine short-term offer worth highlighting.",
       "meta": "Keep this section fresh",
+      "name": "Featured Deal",
       "affiliate": "#",
+      "media_type": "image",
       "review": "#",
       "image": "",
-      "media_type": "image"
+      "description": "Replace this with any genuine short-term offer worth highlighting.",
+      "category": "deals"
     },
     {
-      "category": "picks",
-      "name": "POCO F9 Ultra",
       "badge": "Chigz Pick",
-      "description": "One of the strongest all-round performance phones I’ve tested this year.",
       "meta": "Tested by Chigz",
+      "name": "POCO F9 Ultra",
       "affiliate": "#",
+      "media_type": "image",
       "review": "https://youtu.be/1V66tfO0L9A",
       "image": "",
-      "media_type": "image"
+      "description": "One of the strongest all-round performance phones I’ve tested this year.",
+      "category": "picks"
     },
     {
-      "category": "picks",
-      "name": "LG OLED evo C6",
       "badge": "Chigz Pick",
-      "description": "A premium OLED choice with especially strong gaming performance.",
       "meta": "Chigz Tech Score: 92/100",
+      "name": "LG OLED evo C6",
       "affiliate": "#",
+      "media_type": "image",
       "review": "#",
       "image": "",
-      "media_type": "image"
+      "description": "A premium OLED choice with especially strong gaming performance.",
+      "category": "picks"
     },
     {
-      "category": "picks",
-      "name": "RayNeo GT Max",
       "badge": "Tested by Chigz",
-      "description": "A compelling wearable display for private viewing and portable entertainment.",
       "meta": "Full review available",
+      "name": "RayNeo GT Max",
       "affiliate": "#",
+      "media_type": "image",
       "review": "#",
       "image": "",
-      "media_type": "image"
+      "description": "A compelling wearable display for private viewing and portable entertainment.",
+      "category": "picks"
     },
     {
-      "category": "phones",
-      "name": "Samsung Galaxy S26 Ultra",
       "badge": "Best All-Rounder",
-      "description": "Excellent cameras, display and overall flagship versatility.",
       "meta": "Best for most flagship buyers",
+      "name": "Samsung Galaxy S26 Ultra",
       "affiliate": "#",
+      "media_type": "image",
       "review": "https://youtu.be/0M9DL1nFGYw",
       "image": "",
-      "media_type": "image"
+      "description": "Excellent cameras, display and overall flagship versatility.",
+      "category": "phones"
     },
     {
-      "category": "phones",
-      "name": "POCO F9 Ultra",
       "badge": "Performance Pick",
-      "description": "Serious speed and gaming power without the usual flagship pricing.",
       "meta": "Best for performance/value",
+      "name": "POCO F9 Ultra",
       "affiliate": "#",
+      "media_type": "image",
       "review": "https://youtu.be/1V66tfO0L9A",
       "image": "",
-      "media_type": "image"
+      "description": "Serious speed and gaming power without the usual flagship pricing.",
+      "category": "phones"
     },
     {
-      "category": "phones",
-      "name": "Vivo X300 Ultra",
       "badge": "Camera Pick",
-      "description": "A camera-first flagship for buyers who prioritise photos and video.",
       "meta": "Best for mobile imaging",
+      "name": "Vivo X300 Ultra",
       "affiliate": "#",
+      "media_type": "image",
       "review": "#",
       "image": "",
-      "media_type": "image"
+      "description": "A camera-first flagship for buyers who prioritise photos and video.",
+      "category": "phones"
     },
     {
-      "category": "creator",
+      "badge": "Creator Gear",
+      "meta": "Used by Chigz Tech Reviews",
       "name": "Your Main Camera",
-      "badge": "Creator Gear",
+      "affiliate": "#",
+      "media_type": "image",
+      "review": "#",
+      "image": "",
       "description": "Replace this with the camera or phone you currently use most for filming.",
-      "meta": "Used by Chigz Tech Reviews",
-      "affiliate": "#",
-      "review": "#",
-      "image": "",
-      "media_type": "image"
+      "category": "creator"
     },
     {
-      "category": "creator",
+      "badge": "Creator Gear",
+      "meta": "Used by Chigz Tech Reviews",
       "name": "Your Main Microphone",
-      "badge": "Creator Gear",
+      "affiliate": "#",
+      "media_type": "image",
+      "review": "#",
+      "image": "",
       "description": "Add the microphone you trust for voiceovers, reviews or studio recording.",
-      "meta": "Used by Chigz Tech Reviews",
-      "affiliate": "#",
-      "review": "#",
-      "image": "",
-      "media_type": "image"
+      "category": "creator"
     },
     {
-      "category": "creator",
-      "name": "Your Favourite SSD",
       "badge": "Creator Gear",
-      "description": "Storage is an easy affiliate category because creators constantly need more of it.",
       "meta": "Used by Chigz Tech Reviews",
+      "name": "Your Favourite SSD",
       "affiliate": "#",
+      "media_type": "image",
       "review": "#",
       "image": "",
-      "media_type": "image"
+      "description": "Storage is an easy affiliate category because creators constantly need more of it.",
+      "category": "creator"
     },
     {
-      "category": "home",
-      "name": "LG OLED evo C6",
       "badge": "TV Pick",
-      "description": "Premium OLED picture quality with outstanding gaming credentials.",
       "meta": "Chigz Tech Score: 92/100",
+      "name": "LG OLED evo C6",
       "affiliate": "#",
+      "media_type": "image",
       "review": "#",
       "image": "",
-      "media_type": "image"
+      "description": "Premium OLED picture quality with outstanding gaming credentials.",
+      "category": "home"
     },
     {
-      "category": "home",
-      "name": "XGIMI Elfin Flip 4K",
       "badge": "Projector Pick",
-      "description": "A compact 4K projector option with smart features and an easy setup.",
       "meta": "Projector recommendation",
+      "name": "XGIMI Elfin Flip 4K",
       "affiliate": "#",
+      "media_type": "image",
       "review": "#",
       "image": "",
-      "media_type": "image"
+      "description": "A compact 4K projector option with smart features and an easy setup.",
+      "category": "home"
     },
     {
-      "category": "home",
-      "name": "Roborock Qrevo Edge 2 Flow",
       "badge": "Smart Home Pick",
-      "description": "A strong robot vacuum option for automated everyday cleaning.",
       "meta": "Smart-home recommendation",
+      "name": "Roborock Qrevo Edge 2 Flow",
       "affiliate": "#",
+      "media_type": "image",
       "review": "https://youtu.be/Hu0G3TenTIo",
       "image": "",
-      "media_type": "image"
+      "description": "A strong robot vacuum option for automated everyday cleaning.",
+      "category": "home"
     }
   ]
 }
