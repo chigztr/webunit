@@ -2,6 +2,9 @@ backend:
   name: github
   repo: chigztr/webunit
   branch: main
+  site_domain: boisterous-marzipan-23bb34.netlify.app
+  base_url: https://api.netlify.com
+  auth_endpoint: auth
 
 site_url: https://webunit.co.uk
 display_url: https://webunit.co.uk
