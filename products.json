@@ -1,14 +1,15 @@
 {
   "products": [
     {
-      "category": "deals",
-      "name": "POCO F9 Ultra",
       "badge": "Deal",
-      "description": "Flagship-level performance at a price that makes sense when discounted.",
       "meta": "Add current deal details here",
-      "affiliate": "#",
-      "review": "#",
-      "image": ""
+      "name": "POCO F9 Ultra",
+      "affiliate": "https://bit.ly/4zOM8xL",
+      "media_type": "video",
+      "review": "https://youtu.be/1V66tfO0L9A",
+      "image": "",
+      "description": "Flagship-level performance at a price that makes sense when discounted.",
+      "category": "deals"
     },
     {
       "category": "deals",
@@ -16,8 +17,8 @@
       "badge": "Deal",
       "description": "Immersive AR display glasses for movies, gaming and travel.",
       "meta": "Add current deal details here",
-      "affiliate": "#",
-      "review": "#",
+      "affiliate": "https://amzn.to/4zS4he9",
+      "review": "https://youtu.be/mNysoERdjJM",
       "image": ""
     },
     {
@@ -36,8 +37,8 @@
       "badge": "Chigz Pick",
       "description": "One of the strongest all-round performance phones I’ve tested this year.",
       "meta": "Tested by Chigz",
-      "affiliate": "#",
-      "review": "#",
+      "affiliate": "https://bit.ly/4zOM8xL",
+      "review": "https://youtu.be/1V66tfO0L9A",
       "image": ""
     },
     {
@@ -46,8 +47,8 @@
       "badge": "Chigz Pick",
       "description": "A premium OLED choice with especially strong gaming performance.",
       "meta": "Chigz Tech Score: 92/100",
-      "affiliate": "#",
-      "review": "#",
+      "affiliate": "https://bit.ly/4bSW9Q4",
+      "review": "https://youtu.be/vfkVpjAJ5D8",
       "image": ""
     },
     {
@@ -56,8 +57,8 @@
       "badge": "Tested by Chigz",
       "description": "A compelling wearable display for private viewing and portable entertainment.",
       "meta": "Full review available",
-      "affiliate": "#",
-      "review": "#",
+      "affiliate": "https://bit.ly/4AauEw2",
+      "review": "https://youtu.be/mNysoERdjJM",
       "image": ""
     },
     {
