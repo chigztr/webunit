@@ -1,11 +1,6 @@
-WEBUNIT — EXACT TARGET REBUILD
+WEBUNIT EXACT DESIGN PACKAGE
 
-This version is rebuilt specifically against the approved WebUnit UI mockup.
-
-IMPORTANT:
-For the visual target to match immediately, this package includes settings.json.
-It preserves the current 689.4K+ subscriber count and 198.1M+ views, but restores
-the hero/deals wording used in the approved design.
+Built directly against the approved WebUnit mockup.
 
 REPLACE:
 - index.html
@@ -16,14 +11,10 @@ REPLACE:
 ADD / REPLACE:
 - images/hero-scene.jpg
 
-KEEP:
+KEEP YOUR EXISTING:
 - products.json
 - admin/config.yml
 - _headers
 - images/uploads/
 
-The right-hand hero scene is extracted directly from the approved design, so it
-will finally match the Chigz / studio / product composition you approved instead
-of trying to recreate it with separate floating boxes.
-
-CMS remains compatible after upload.
+The hero visual is taken directly from the approved design so the face, products, studio, handwriting and feature list match the target. Product/deal cards remain live from products.json and CMS.

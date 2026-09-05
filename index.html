@@ -9,102 +9,60 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=20260905-target11">
+  <link rel="stylesheet" href="style.css?v=20260905-exact-final1">
 </head>
 <body>
-
+<div class="site-frame">
 <header class="site-header">
   <div class="wrap nav">
     <a class="brand" href="#top" aria-label="WebUnit by Chigz">
-      <span class="brand-web">WEB</span><span class="brand-unit">UNIT</span>
-      <span class="brand-by">by</span><span class="brand-chigz">Chigz</span>
+      <span class="brand-web">WEB</span><span class="brand-unit">UNIT</span><span class="brand-by">by</span><span class="brand-chigz">Chigz</span>
     </a>
-
     <nav class="nav-links" aria-label="Primary">
-      <a href="#deals">Deals</a>
-      <a href="#picks">Chigz Picks</a>
-      <a href="#phones">Smartphones</a>
-      <a href="#creator">Creator Gear</a>
-      <a href="#home-tech">Home Tech</a>
+      <a href="#deals">Deals</a><a href="#picks">Chigz Picks</a><a href="#phones">Smartphones</a><a href="#creator">Creator Gear</a><a href="#home-tech">Home Tech</a>
     </nav>
-
     <div class="nav-actions">
       <label class="search-box" aria-label="Search products">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m21 21-4.35-4.35m1.35-5.65A7 7 0 1 1 4 11a7 7 0 0 1 14 0Z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="m21 21-4.35-4.35m1.35-5.65A7 7 0 1 1 4 11a7 7 0 0 1 14 0Z"/></svg>
         <input id="product-search" type="search" placeholder="Search for tech deals, products..." autocomplete="off">
       </label>
       <a class="nav-cta" href="#picks"><span>◆</span> Browse picks <b>→</b></a>
-      <button class="menu-btn" id="menu-btn" type="button" aria-label="Open menu" aria-expanded="false">☰</button>
+      <button id="menu-btn" class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false">☰</button>
     </div>
   </div>
-
-  <div class="mobile-menu" id="mobile-menu">
-    <a href="#deals">Deals</a>
-    <a href="#picks">Chigz Picks</a>
-    <a href="#phones">Smartphones</a>
-    <a href="#creator">Creator Gear</a>
-    <a href="#home-tech">Home Tech</a>
+  <div id="mobile-menu" class="mobile-menu">
+    <a href="#deals">Deals</a><a href="#picks">Chigz Picks</a><a href="#phones">Smartphones</a><a href="#creator">Creator Gear</a><a href="#home-tech">Home Tech</a>
   </div>
 </header>
 
 <main id="top">
-
 <section class="hero">
-  <div class="wrap hero-shell">
-    <div class="hero-left">
+  <div class="hero-shell wrap">
+    <div class="hero-copy">
       <span class="hero-kicker" id="hero-eyebrow">REAL TECH. REAL TESTS. REAL OPINIONS.</span>
-
-      <h1>
-        <span id="hero-headline-1">Tech I’ve tested.</span><br>
-        <span id="hero-headline-2">Deals I’d actually <em>recommend.</em></span>
-      </h1>
-
-      <p id="hero-copy">Curated tech deals and recommendations from Chigz. Real reviews. Real-world use. No hype, just honest advice.</p>
-
+      <h1><span id="hero-headline-1">Tech I’ve tested.</span><br><span id="hero-headline-2">Deals I’d actually <em>recommend.</em></span></h1>
+      <p id="hero-copy">Curated tech deals and recommendations from Chigz. Real reviews. Real world use. No hype, just honest advice.</p>
       <div class="hero-actions">
         <a class="primary-btn" href="#picks"><span>◆</span> Browse picks <b>→</b></a>
         <a class="secondary-btn" id="hero-video-link" href="https://www.youtube.com/@ChigzTech" target="_blank" rel="noopener"><span>▶</span> Watch latest video</a>
       </div>
-
       <div class="hero-proof">
         <div><span>✓</span><b>Tested by me.</b><small>Not just specs.</small></div>
         <div><span>👥</span><b>Real recommendations</b><small>For real people.</small></div>
         <div><span>♥</span><b>Smarter tech</b><small>For a better life.</small></div>
       </div>
     </div>
-
-    <div class="hero-right">
-      <img src="images/hero-scene.jpg" alt="Chigz with recommended tech">
-      <div class="hero-note">Smarter tech<br>for a better life.<br><span>— Chigz</span></div>
-    </div>
+    <div class="hero-scene"><img src="images/hero-scene.jpg" alt="Chigz with recommended tech"></div>
 
     <div class="stats-panel">
       <a class="channel-stat" id="chigz-channel-link" href="https://YouTube.com/@ChigzTech" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.7V8.3L16 12l-6.4 3.7Z"/>
-        </svg>
-        <strong id="channel-display-label">YouTube.com/@ChigzTech</strong>
-        <span>↗</span>
+        <svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.7V8.3L16 12l-6.4 3.7Z"/></svg>
+        <strong id="channel-display-label">YouTube.com/@ChigzTech</strong><span>↗</span>
       </a>
-
       <span class="stat-divider"></span>
-
-      <a class="stat" id="youtube-subs-link" href="https://www.youtube.com/@ChigzTech" target="_blank" rel="noopener">
-        <span class="stat-icon">👥</span>
-        <span><strong id="subscriber-count">689.4K+</strong><small>Subscribers</small></span>
-      </a>
-
+      <a class="stat" id="youtube-subs-link" href="https://www.youtube.com/@ChigzTech" target="_blank" rel="noopener"><span class="stat-icon">👥</span><span><strong id="subscriber-count">689.4K+</strong><small>Subscribers</small></span></a>
       <span class="stat-divider"></span>
-
-      <a class="stat" id="youtube-views-link" href="https://www.youtube.com/@ChigzTech" target="_blank" rel="noopener">
-        <span class="stat-icon eye">◉</span>
-        <span><strong id="total-view-count">198.1M+</strong><small>Total Views</small></span>
-      </a>
-    </div>
-
-    <div class="mobile-actions">
-      <a class="primary-btn" href="#picks"><span>◆</span> Browse picks <b>→</b></a>
-      <a class="secondary-btn" id="mobile-video-link" href="https://www.youtube.com/@ChigzTech" target="_blank" rel="noopener"><span>▶</span> Watch latest video</a>
+      <a class="stat" id="youtube-views-link" href="https://www.youtube.com/@ChigzTech" target="_blank" rel="noopener"><span class="stat-icon eye">◉</span><span><strong id="total-view-count">198.1M+</strong><small>Total Views</small></span></a>
     </div>
   </div>
 </section>
@@ -116,103 +74,36 @@
     <a class="category" href="#phones"><span>▯</span><b>Smartphones</b></a>
     <a class="category" href="#creator"><span>◉</span><b>Creator Gear</b></a>
     <a class="category" href="#home-tech"><span>⌂</span><b>Home Tech</b></a>
+    <div class="quote-card"><span class="quote-mark">“</span><span>Real tech.<br>Real people. A brighter you.</span><strong>— Chigz</strong></div>
   </div>
 </section>
 
 <section class="section deals-section" id="deals">
   <div class="wrap">
     <div class="section-head">
-      <div>
-        <span class="section-kicker" id="deals-kicker">LIMITED-TIME</span>
-        <div class="section-title-row">
-          <h2 id="deals-title">Today's Deals</h2>
-          <p id="deals-description">Hand-picked deals on the best tech. Updated regularly.</p>
-        </div>
-      </div>
+      <div><span class="section-kicker" id="deals-kicker">LIMITED-TIME</span><div class="section-title-row"><h2 id="deals-title">Today's Deals</h2><p id="deals-description">Hand-picked deals on the best tech. Updated regularly.</p></div></div>
       <a class="view-all" href="#deals-grid">View all deals <span>→</span></a>
     </div>
-
     <div class="product-grid deals-grid" id="deals-grid" data-category="deals"></div>
-
     <div class="trust-strip">
       <div><span>🛡️</span><b>Genuine deals from trusted retailers</b></div>
-      <div><span>✓</span><b>No hype, just honest recommendations</b></div>
-      <div><span>📦</span><b>Products I’ve tested and used</b></div>
+      <div><span>🤝</span><b>No hype, just honest recommendations</b></div>
+      <div><span>📦</span><b>Products I’ve tested and use</b></div>
       <div><span>♥</span><b>Supporting the channel helps a lot</b></div>
+      <div class="thanks"><span>Thanks for<br>the support!</span><strong>— Chigz ♥</strong></div>
     </div>
   </div>
 </section>
 
-<section class="section alt" id="picks">
-  <div class="wrap">
-    <div class="section-head">
-      <div><span class="section-kicker" id="picks-kicker">BEST OF THE BEST</span><h2 id="picks-title">Chigz Picks</h2></div>
-      <p id="picks-description">Products that stood out in real-world testing.</p>
-    </div>
-    <div class="product-grid" data-category="picks"></div>
-  </div>
-</section>
+<section class="section alt" id="picks"><div class="wrap"><div class="section-head"><div><span class="section-kicker" id="picks-kicker">BEST OF THE BEST</span><h2 id="picks-title">Chigz Picks</h2></div><p id="picks-description">Products that stood out in real-world testing.</p></div><div class="product-grid" data-category="picks"></div></div></section>
+<section class="section" id="phones"><div class="wrap"><div class="section-head"><div><span class="section-kicker" id="phones-kicker">MOBILE</span><h2 id="phones-title">Best Smartphones</h2></div><p id="phones-description">Clear winners from phones I’ve actually tested and reviewed.</p></div><div class="product-grid" data-category="phones"></div></div></section>
+<section class="section alt" id="creator"><div class="wrap"><div class="section-head"><div><span class="section-kicker" id="creator-kicker">BEHIND THE CHANNEL</span><h2 id="creator-title">My Creator Gear</h2></div><p id="creator-description">Useful gear from the setup behind Chigz Tech Reviews.</p></div><div class="product-grid" data-category="creator"></div></div></section>
+<section class="section" id="home-tech"><div class="wrap"><div class="section-head"><div><span class="section-kicker" id="home-kicker">HOME & ENTERTAINMENT</span><h2 id="home-title">TVs, Projectors & Smart Home</h2></div><p id="home-description">Entertainment and smart-home products genuinely worth considering.</p></div><div class="product-grid" data-category="home"></div></div></section>
 
-<section class="section" id="phones">
-  <div class="wrap">
-    <div class="section-head">
-      <div><span class="section-kicker" id="phones-kicker">MOBILE</span><h2 id="phones-title">Best Smartphones</h2></div>
-      <p id="phones-description">Clear winners from phones I’ve actually tested and reviewed.</p>
-    </div>
-    <div class="product-grid" data-category="phones"></div>
-  </div>
-</section>
-
-<section class="section alt" id="creator">
-  <div class="wrap">
-    <div class="section-head">
-      <div><span class="section-kicker" id="creator-kicker">BEHIND THE CHANNEL</span><h2 id="creator-title">My Creator Gear</h2></div>
-      <p id="creator-description">Useful gear from the setup behind Chigz Tech Reviews.</p>
-    </div>
-    <div class="product-grid" data-category="creator"></div>
-  </div>
-</section>
-
-<section class="section" id="home-tech">
-  <div class="wrap">
-    <div class="section-head">
-      <div><span class="section-kicker" id="home-kicker">HOME & ENTERTAINMENT</span><h2 id="home-title">TVs, Projectors & Smart Home</h2></div>
-      <p id="home-description">Entertainment and smart-home products genuinely worth considering.</p>
-    </div>
-    <div class="product-grid" data-category="home"></div>
-  </div>
-</section>
-
-<section class="cta">
-  <div class="wrap cta-card">
-    <div>
-      <span id="reviews-kicker">WANT THE FULL REVIEWS?</span>
-      <h2 id="reviews-title">Watch the testing behind the picks.</h2>
-      <p id="reviews-description">WebUnit is the shortlist. Chigz Tech Reviews is where you’ll find the full videos, comparisons and real-world testing.</p>
-    </div>
-    <a id="youtube-cta" href="https://www.youtube.com/@ChigzTech" target="_blank" rel="noopener">Visit Chigz Tech Reviews ↗</a>
-  </div>
-</section>
-
+<section class="cta"><div class="wrap cta-card"><div><span id="reviews-kicker">WANT THE FULL REVIEWS?</span><h2 id="reviews-title">Watch the testing behind the picks.</h2><p id="reviews-description">WebUnit is the shortlist. Chigz Tech Reviews is where you’ll find the full videos, comparisons and real-world testing.</p></div><a id="youtube-cta" href="https://www.youtube.com/@ChigzTech" target="_blank" rel="noopener">Visit Chigz Tech Reviews ↗</a></div></section>
 </main>
 
-<footer>
-  <div class="wrap footer-grid">
-    <div>
-      <a class="brand footer-brand" href="#top">
-        <span class="brand-web">WEB</span><span class="brand-unit">UNIT</span>
-        <span class="brand-by">by</span><span class="brand-chigz">Chigz</span>
-      </a>
-      <p id="footer-tagline">Tech worth knowing. Gear worth buying.</p>
-    </div>
-    <div class="footer-copy">
-      <p><strong>Affiliate disclosure:</strong> <span id="affiliate-disclosure">Some outbound links may be affiliate links.</span></p>
-      <p>© <span id="year"></span> WebUnit. <span id="footer-credit">Recommendations from Chigz Tech Reviews.</span></p>
-      <p class="footer-links"><a id="footer-youtube" href="https://www.youtube.com/@ChigzTech" target="_blank" rel="noopener">YouTube</a><span>·</span><a id="footer-chigztech" href="https://chigztech.com" target="_blank" rel="noopener">ChigzTech.com</a><span>·</span><a id="footer-contact" href="mailto:hello@webunit.co.uk">Contact</a></p>
-    </div>
-  </div>
-</footer>
-
-<script src="app.js?v=20260905-target11"></script>
-</body>
-</html>
+<footer><div class="wrap footer-grid"><div><a class="brand footer-brand" href="#top"><span class="brand-web">WEB</span><span class="brand-unit">UNIT</span><span class="brand-by">by</span><span class="brand-chigz">Chigz</span></a><p id="footer-tagline">Tech worth knowing. Gear worth buying.</p></div><div class="footer-copy"><p><strong>Affiliate disclosure:</strong> <span id="affiliate-disclosure">Some outbound links may be affiliate links.</span></p><p>© <span id="year"></span> WebUnit. <span id="footer-credit">Recommendations from Chigz Tech Reviews.</span></p><p class="footer-links"><a id="footer-youtube" href="https://www.youtube.com/@ChigzTech" target="_blank" rel="noopener">YouTube</a><span>·</span><a id="footer-chigztech" href="https://chigztech.com" target="_blank" rel="noopener">ChigzTech.com</a><span>·</span><a id="footer-contact" href="mailto:hello@webunit.co.uk">Contact</a></p></div></div></footer>
+</div>
+<script src="app.js?v=20260905-exact-final1"></script>
+</body></html>
