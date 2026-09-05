@@ -1,61 +1,17 @@
-WEBUNIT PREMIUM REDESIGN — MANUAL YOUTUBE STATS
-================================================
+WEBUNIT FIXED PREMIUM REDESIGN — MANUAL YOUTUBE STATS
 
-This version removes the live YouTube API counter.
+This fixes the broken layout in the previous ZIP and also cache-busts style.css and app.js so the main webunit.co.uk URL cannot keep mixing new HTML with an older stylesheet.
 
-The top strip now shows:
-- YouTube Subscribers
-- Total YouTube Views
-
-Both values are edited manually from the CMS.
-
-UPLOAD / REPLACE
-----------------
-Replace these files in your GitHub repo:
+Replace these four files:
 - index.html
 - style.css
 - app.js
 - admin/config.yml
 
-DO NOT replace:
-- products.json
-- settings.json
-- images/uploads
-- _headers
+Do not replace products.json, settings.json, images, or _headers.
 
-CMS
----
-After Cloudflare redeploys, open:
-
-https://webunit.co.uk/admin/
-
-Go to:
-Site Settings > Homepage & Links
-
-You will now see:
+Manual CMS fields remain:
 - YouTube Subscriber Count
 - YouTube Total View Count
 
-Example values:
-Subscriber Count: 650K+
-Total View Count: 185M+
-
-You can type the exact display format you want.
-
-IMPORTANT
----------
-You do NOT need a YouTube API key anymore.
-
-If you already uploaded the previous redesign's file:
-functions/api/youtube-subscribers.js
-
-you may delete that file from GitHub later. It is no longer used by the website,
-so leaving it there temporarily will not affect the site.
-
-Everything else is preserved:
-- CMS products
-- Static Image / YouTube Video cards
-- Affiliate links
-- Product images
-- Site settings
-- Cloudflare hosting
+After Cloudflare finishes deploying, hard-refresh webunit.co.uk once.
