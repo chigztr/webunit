@@ -1,24 +1,51 @@
-WEBUNIT UPDATED GRAPHICS
+WEBUNIT COMPLETE DESIGN FIX
+===========================
 
-Ready for GitHub upload.
+This update fixes the missing design elements and rebuilds the homepage to match
+the approved "WEBUNIT by Chigz" direction.
 
-MAIN WEBSITE GRAPHIC
+WHAT IS NOW INCLUDED
 --------------------
-images/chigz-banner.png
+- WEBUNIT by Chigz logo at the very top
+- Handwritten Chigz-style logo treatment
+- Functional search box in the header
+- Main hero with the real uploaded Chigz face
+- "Real tech. Real tests. Real opinions." hero styling
+- Browse Picks button + handwritten upgrade note
+- Manual YouTube subscriber and total-view stats panel
+- Quick category tiles
+- Chigz quote/signature panel
+- Improved Today's Deals heading and View All button
+- Trust ribbon below the deal cards
+- Existing CMS-driven product cards
+- Existing Static Image / YouTube Video option
+- Fixed centered YouTube play button
+- Mobile responsive layout
 
-Replace your existing:
-images/chigz-banner.png
+UPLOAD / REPLACE
+----------------
+Replace:
+- index.html
+- style.css
+- app.js
+- admin/config.yml
 
-with this new version.
-
-It uses the latest approved WebUnit by Chigz design and the updated face based on your new reference image.
-
-REFERENCE ONLY
---------------
-images/webunit-homepage-reference.png
-
-This is the full latest homepage mockup for visual reference. It does not need to be used by the live site.
+Add / replace:
+- images/chigz-hero.png
 
 IMPORTANT
 ---------
-Do not replace products.json, settings.json, app.js, style.css, or CMS files for this graphics-only update.
+KEEP your existing:
+- products.json
+- settings.json
+- images/uploads/
+- _headers
+
+That preserves your current products, affiliate links and site settings.
+
+NEW CMS OPTION
+--------------
+Site Settings now includes "Hero Portrait Image", so in future you can replace
+the Chigz image without editing code.
+
+The bundled images/chigz-hero.png is used automatically if that CMS field is blank.

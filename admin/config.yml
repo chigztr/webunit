@@ -83,13 +83,13 @@ collections:
                 options:
                   - { label: "Static Image", value: "image" }
                   - { label: "YouTube Video — click to play", value: "video" }
-                hint: "Optional for existing products. If left unset, the site treats it as Static Image."
+                hint: "If left unset, the site treats it as Static Image."
 
               - label: "Product Image"
                 name: "image"
                 widget: "image"
                 required: false
-                hint: "Optional. In Static Image mode this is the card image. In YouTube Video mode it becomes the custom video poster; leave blank to use the YouTube thumbnail automatically."
+                hint: "Optional. In YouTube Video mode this becomes the video poster; leave blank to use the YouTube thumbnail automatically."
 
   - label: "Site Settings"
     name: "site_settings"
@@ -105,36 +105,43 @@ collections:
           - { label: "SEO Description", name: "metaDescription", widget: "text" }
           - { label: "Hero Eyebrow", name: "heroEyebrow", widget: "string" }
           - { label: "Hero Headline — Line 1", name: "heroHeadline1", widget: "string" }
-          - { label: "Hero Headline — Line 2", name: "heroHeadline2", widget: "string" }
+          - { label: "Hero Highlight Word / Phrase", name: "heroHeadline2", widget: "string" }
           - { label: "Hero Description", name: "heroCopy", widget: "text" }
+
+          - label: "Hero Portrait Image"
+            name: "heroPortraitImage"
+            widget: "image"
+            required: false
+            hint: "Optional. Upload a new Chigz portrait here. If blank, the bundled images/chigz-hero.png is used."
+
           - { label: "YouTube Channel Link", name: "youtubeUrl", widget: "string" }
+
           - label: "YouTube Subscriber Count"
             name: "youtubeSubscriberCount"
             widget: "string"
             required: false
             default: "650K+"
-            hint: "Manual display value for the top strip. Examples: 650K+, 651K, 1.02M"
+            hint: "Manual display value. Examples: 650K+, 651K, 1.02M"
+
           - label: "YouTube Total View Count"
             name: "youtubeTotalViews"
             widget: "string"
             required: false
             default: "185M+"
-            hint: "Manual display value for the top strip. Examples: 185M+, 250M, 1.2B"
-          - label: "Top Strip Channel URL"
+            hint: "Manual display value. Examples: 185M+, 250M, 1.2B"
+
+          - label: "Top Stats Channel URL"
             name: "chigzChannelUrl"
             widget: "string"
             required: false
             default: "http://Youtube.com/@ChigzTech"
-          - label: "Top Strip Channel Label"
+
+          - label: "Top Stats Channel Label"
             name: "chigzChannelDisplayUrl"
             widget: "string"
             required: false
             default: "YouTube.com/@ChigzTech"
-          - label: "Brand Banner Image"
-            name: "brandBannerImage"
-            widget: "image"
-            required: false
-            hint: "Optional. Upload your main Chigz / YouTube artwork here to replace the bundled banner."
+
           - { label: "ChigzTech.com Link", name: "chigzTechUrl", widget: "string" }
           - { label: "Contact Email", name: "contactEmail", widget: "string" }
           - { label: "Footer Tagline", name: "footerTagline", widget: "string" }

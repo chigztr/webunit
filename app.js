@@ -30,20 +30,6 @@ function safeUrl(value = '') {
   }
 }
 
-function applyBannerImage(url) {
-  const img = document.getElementById('brand-banner-image');
-  const banner = document.querySelector('.brand-banner');
-  if (!img || !banner) return;
-
-  const clean = safeUrl(url);
-  if (clean) {
-    img.src = clean;
-    img.onerror = () => banner.classList.add('is-fallback');
-  } else {
-    img.onerror = () => banner.classList.add('is-fallback');
-  }
-}
-
 async function loadSettings() {
   try {
     const res = await fetch('settings.json?ts=' + Date.now(), { cache: 'no-store' });
@@ -66,12 +52,14 @@ async function loadSettings() {
     setHref('youtube-cta', s.youtubeUrl);
     setHref('footer-youtube', s.youtubeUrl);
 
-    if (s.chigzChannelDisplayUrl) {
-      const label = document.querySelector('.channel-link span');
-      if (label) label.textContent = s.chigzChannelDisplayUrl;
-    }
+    if (s.chigzChannelDisplayUrl) setText('channel-display-label', s.chigzChannelDisplayUrl);
     if (s.chigzChannelUrl) setHref('chigz-channel-link', s.chigzChannelUrl);
-    if (s.brandBannerImage) applyBannerImage(s.brandBannerImage);
+
+    if (s.heroPortraitImage) {
+      const portrait = document.getElementById('hero-portrait-image');
+      const portraitUrl = safeUrl(s.heroPortraitImage);
+      if (portrait && portraitUrl) portrait.src = portraitUrl;
+    }
 
     setText('deals-kicker', s.dealsKicker);
     setText('deals-title', s.dealsTitle);
@@ -107,9 +95,7 @@ function getYouTubeVideoId(url) {
   try {
     const u = new URL(url);
     const host = u.hostname.replace(/^www\./, '');
-
     if (host === 'youtu.be') return u.pathname.split('/').filter(Boolean)[0] || '';
-
     if (host === 'youtube.com' || host === 'm.youtube.com') {
       if (u.pathname === '/watch') return u.searchParams.get('v') || '';
       const parts = u.pathname.split('/').filter(Boolean);
@@ -161,7 +147,7 @@ function renderProductMedia(product) {
     return `<img src="${escapeHtml(imageSrc)}" alt="${name}" loading="lazy" decoding="async"${fallbackAttr}>`;
   }
 
-  return `<div class="product-placeholder">WEB<span style="opacity:.65">UNIT</span></div>`;
+  return `<div class="product-placeholder">WEBUNIT</div>`;
 }
 
 function enableClickToPlay() {
@@ -188,6 +174,34 @@ function enableClickToPlay() {
   });
 }
 
+function applySearch(query) {
+  const normalized = String(query || '').trim().toLowerCase();
+  const cards = [...document.querySelectorAll('.product-card')];
+
+  cards.forEach(card => {
+    const haystack = card.dataset.search || '';
+    card.classList.toggle('search-hidden', normalized && !haystack.includes(normalized));
+  });
+
+  document.querySelectorAll('.product-grid').forEach(grid => {
+    const visible = [...grid.querySelectorAll('.product-card')].some(card => !card.classList.contains('search-hidden'));
+    let empty = grid.nextElementSibling;
+    if (!empty || !empty.classList.contains('search-empty')) {
+      empty = document.createElement('div');
+      empty.className = 'search-empty';
+      empty.textContent = 'No matching products in this section.';
+      grid.insertAdjacentElement('afterend', empty);
+    }
+    empty.classList.toggle('visible', Boolean(normalized) && !visible);
+  });
+}
+
+function enableSearch() {
+  const input = document.getElementById('product-search');
+  if (!input) return;
+  input.addEventListener('input', () => applySearch(input.value));
+}
+
 async function loadProducts() {
   try {
     const res = await fetch('products.json?ts=' + Date.now(), { cache: 'no-store' });
@@ -208,17 +222,18 @@ async function loadProducts() {
         const media = renderProductMedia(p);
         const affiliateUrl = safeUrl(p.affiliate);
         const reviewUrl = safeUrl(p.review);
+        const searchText = [p.name, p.badge, p.description, p.meta, p.category].filter(Boolean).join(' ').toLowerCase();
 
         const affiliate = affiliateUrl
-          ? `<a class="buy-link" href="${escapeHtml(affiliateUrl)}" target="_blank" rel="sponsored nofollow noopener">Check latest price</a>`
-          : `<a class="buy-link" href="#" onclick="return false;">Add affiliate link</a>`;
+          ? `<a class="buy-link" href="${escapeHtml(affiliateUrl)}" target="_blank" rel="sponsored nofollow noopener">◆ Check latest price</a>`
+          : `<a class="buy-link" href="#" onclick="return false;">◆ Add affiliate link</a>`;
 
         const review = reviewUrl
-          ? `<a class="review-link" href="${escapeHtml(reviewUrl)}" target="_blank" rel="noopener">Watch review</a>`
-          : `<a class="review-link" href="#" onclick="return false;">Add review link</a>`;
+          ? `<a class="review-link" href="${escapeHtml(reviewUrl)}" target="_blank" rel="noopener">▶ Watch review</a>`
+          : `<a class="review-link" href="#" onclick="return false;">▶ Add review link</a>`;
 
         return `
-          <article class="product-card">
+          <article class="product-card" data-search="${escapeHtml(searchText)}">
             <div class="product-image">${media}</div>
             <div class="product-body">
               <span class="badge">${escapeHtml(p.badge || 'Recommended')}</span>
@@ -238,6 +253,7 @@ async function loadProducts() {
 
 async function init() {
   enableClickToPlay();
+  enableSearch();
 
   const year = document.getElementById('year');
   if (year) year.textContent = new Date().getFullYear();
