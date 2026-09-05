@@ -1,26 +1,42 @@
-WEBUNIT MOBILE ORDER FIX
+WEBUNIT CMS TEXT FIX
+====================
 
-Fixes the exact mobile issue shown in the latest screenshot.
+This patch fixes the Site Settings text fields not updating the live website.
 
-Mobile order is now:
-1. Header
-2. Hero headline / description / Browse Picks
-3. Clean hero artwork
-4. YouTube / Subscribers / Total Views card
-5. Category buttons
+WHY IT HAPPENED
+---------------
+The previous mockup-matching version intentionally locked the hero wording in
+the HTML so old CMS text could not break the design. That also meant publishing
+new text from the CMS had no effect.
 
-Also fixed:
-- Removed baked-in duplicate stats/text from the mobile hero artwork
-- Better face / artwork crop on phones
-- Darker blue 'recommend.' for stronger contrast
-- Stats card no longer overlaps the hero image
-- Desktop layout is unchanged
+FIXED CMS FIELDS
+----------------
+These now update the live website again:
+- Hero Eyebrow
+- Hero Headline — Line 1
+- Hero Highlight Word / Phrase
+- Hero Description
+- YouTube subscriber count
+- YouTube total views
+- Deals text
+- Chigz Picks text
+- Smartphones text
+- Creator Gear text
+- Home Tech text
+- Reviews CTA text/button
+- Footer text and links
 
-REPLACE:
+The final word of the Hero Highlight Word / Phrase stays blue so the approved
+design style is preserved.
+
+UPLOAD / REPLACE
+----------------
+Replace:
 - index.html
+- app.js
 - style.css
 
-ADD / REPLACE:
-- images/chigz-hero-mobile.jpg
+No settings.json or products.json replacement is needed.
 
-Keep all other files unchanged.
+After Cloudflare deploys, publish a small text change in the CMS and reload the
+site. The change should now appear.

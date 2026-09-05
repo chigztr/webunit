@@ -26,6 +26,22 @@ function safeUrl(value = '') {
   }
 }
 
+function renderHeroSecondLine(value) {
+  const el = document.getElementById('hero-headline-2');
+  if (!el || value === undefined || value === null || value === '') return;
+
+  const text = String(value).trim();
+  const words = text.split(/\s+/).filter(Boolean);
+
+  if (words.length <= 1) {
+    el.innerHTML = `<em>${escapeHtml(text)}</em>`;
+    return;
+  }
+
+  const highlight = words.pop();
+  el.innerHTML = `${escapeHtml(words.join(' '))} <em>${escapeHtml(highlight)}</em>`;
+}
+
 async function loadSettings() {
   try {
     const res = await fetch('settings.json?ts=' + Date.now(), { cache: 'no-store' });
@@ -36,7 +52,13 @@ async function loadSettings() {
     const meta = document.getElementById('meta-description');
     if (meta && s.metaDescription) meta.setAttribute('content', s.metaDescription);
 
-    // Keep the approved hero design locked so older CMS hero text cannot break the layout.
+    // Hero text — fully controlled from Site Settings.
+    setText('hero-eyebrow', s.heroEyebrow);
+    setText('hero-headline-1', s.heroHeadline1);
+    renderHeroSecondLine(s.heroHeadline2);
+    setText('hero-copy', s.heroCopy);
+
+    // Manual YouTube stats + links.
     setText('subscriber-count', s.youtubeSubscriberCount);
     setText('total-view-count', s.youtubeTotalViews);
     setHref('youtube-subs-link', s.youtubeUrl);
@@ -47,6 +69,34 @@ async function loadSettings() {
     if (s.chigzChannelDisplayUrl) setText('channel-display-label', s.chigzChannelDisplayUrl);
     if (s.chigzChannelUrl) setHref('chigz-channel-link', s.chigzChannelUrl);
 
+    // Homepage section headings/descriptions.
+    setText('deals-kicker', s.dealsKicker);
+    setText('deals-title', s.dealsTitle);
+    setText('deals-description', s.dealsDescription);
+
+    setText('picks-kicker', s.picksKicker);
+    setText('picks-title', s.picksTitle);
+    setText('picks-description', s.picksDescription);
+
+    setText('phones-kicker', s.phonesKicker);
+    setText('phones-title', s.phonesTitle);
+    setText('phones-description', s.phonesDescription);
+
+    setText('creator-kicker', s.creatorKicker);
+    setText('creator-title', s.creatorTitle);
+    setText('creator-description', s.creatorDescription);
+
+    setText('home-kicker', s.homeKicker);
+    setText('home-title', s.homeTitle);
+    setText('home-description', s.homeDescription);
+
+    setText('reviews-kicker', s.reviewsKicker);
+    setText('reviews-title', s.reviewsTitle);
+    setText('reviews-description', s.reviewsDescription);
+    setText('youtube-cta', s.reviewsButtonLabel);
+    setHref('youtube-cta', s.youtubeUrl);
+
+    // Footer.
     setText('footer-tagline', s.footerTagline);
     setText('affiliate-disclosure', s.affiliateDisclosure);
     setText('footer-credit', s.footerCredit);
