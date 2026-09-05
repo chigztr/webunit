@@ -10,11 +10,7 @@ function setHref(id, value) {
 
 function escapeHtml(value = '') {
   return String(value).replace(/[&<>"']/g, char => ({
-    '&': '&amp;',
-    '<': '&lt;',
-    '>': '&gt;',
-    '"': '&quot;',
-    "'": '&#039;'
+    '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;'
   }[char]));
 }
 
@@ -30,21 +26,6 @@ function safeUrl(value = '') {
   }
 }
 
-function renderHeroSecondLine(value) {
-  const el = document.getElementById('hero-headline-2');
-  if (!el || !value) return;
-
-  const text = String(value).trim();
-  const parts = text.split(/\s+/);
-  if (parts.length < 2) {
-    el.textContent = text;
-    return;
-  }
-
-  const last = parts.pop();
-  el.innerHTML = `${escapeHtml(parts.join(' '))} <em>${escapeHtml(last)}</em>`;
-}
-
 async function loadSettings() {
   try {
     const res = await fetch('settings.json?ts=' + Date.now(), { cache: 'no-store' });
@@ -55,11 +36,8 @@ async function loadSettings() {
     const meta = document.getElementById('meta-description');
     if (meta && s.metaDescription) meta.setAttribute('content', s.metaDescription);
 
-    setText('hero-eyebrow', s.heroEyebrow);
-    setText('hero-headline-1', s.heroHeadline1);
-    renderHeroSecondLine(s.heroHeadline2);
-    setText('hero-copy', s.heroCopy);
-
+    // Keep the hero wording/layout locked to the approved mockup.
+    // Only the manually managed stats and links are loaded from CMS here.
     setText('subscriber-count', s.youtubeSubscriberCount);
     setText('total-view-count', s.youtubeTotalViews);
     setHref('youtube-subs-link', s.youtubeUrl);
@@ -70,24 +48,6 @@ async function loadSettings() {
     if (s.chigzChannelDisplayUrl) setText('channel-display-label', s.chigzChannelDisplayUrl);
     if (s.chigzChannelUrl) setHref('chigz-channel-link', s.chigzChannelUrl);
 
-    setText('deals-kicker', s.dealsKicker);
-    setText('deals-title', s.dealsTitle);
-    setText('picks-kicker', s.picksKicker);
-    setText('picks-title', s.picksTitle);
-    setText('picks-description', s.picksDescription);
-    setText('phones-kicker', s.phonesKicker);
-    setText('phones-title', s.phonesTitle);
-    setText('phones-description', s.phonesDescription);
-    setText('creator-kicker', s.creatorKicker);
-    setText('creator-title', s.creatorTitle);
-    setText('creator-description', s.creatorDescription);
-    setText('home-kicker', s.homeKicker);
-    setText('home-title', s.homeTitle);
-    setText('home-description', s.homeDescription);
-    setText('reviews-kicker', s.reviewsKicker);
-    setText('reviews-title', s.reviewsTitle);
-    setText('reviews-description', s.reviewsDescription);
-    setText('youtube-cta', s.reviewsButtonLabel);
     setText('footer-tagline', s.footerTagline);
     setText('affiliate-disclosure', s.affiliateDisclosure);
     setText('footer-credit', s.footerCredit);
@@ -161,32 +121,27 @@ function enableClickToPlay() {
   document.addEventListener('click', event => {
     const trigger = event.target.closest('.youtube-media[data-video-id]');
     if (!trigger) return;
-
     const videoId = trigger.dataset.videoId;
     if (!videoId || !/^[A-Za-z0-9_-]{6,}$/.test(videoId)) return;
-
     const media = trigger.closest('.product-image');
     if (!media) return;
 
     media.innerHTML = `
-      <iframe
-        class="youtube-iframe"
+      <iframe class="youtube-iframe"
         src="https://www.youtube-nocookie.com/embed/${encodeURIComponent(videoId)}?autoplay=1&rel=0"
         title="YouTube video player"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         referrerpolicy="strict-origin-when-cross-origin"
-        allowfullscreen>
-      </iframe>
+        allowfullscreen></iframe>
     `;
   });
 }
 
 function applySearch(query) {
   const normalized = String(query || '').trim().toLowerCase();
-
   document.querySelectorAll('.product-card').forEach(card => {
-    const haystack = card.dataset.search || '';
-    card.classList.toggle('search-hidden', Boolean(normalized) && !haystack.includes(normalized));
+    const text = card.dataset.search || '';
+    card.classList.toggle('search-hidden', Boolean(normalized) && !text.includes(normalized));
   });
 
   document.querySelectorAll('.product-grid').forEach(grid => {
@@ -223,7 +178,7 @@ async function loadProducts() {
       const items = products.filter(p => p.category === category);
 
       if (!items.length) {
-        grid.innerHTML = `<div class="empty-state">No products added here yet. Add them in the CMS when ready.</div>`;
+        grid.innerHTML = `<div class="empty-state">No products added here yet.</div>`;
         return;
       }
 
@@ -263,10 +218,8 @@ async function loadProducts() {
 async function init() {
   enableClickToPlay();
   enableSearch();
-
   const year = document.getElementById('year');
   if (year) year.textContent = new Date().getFullYear();
-
   await Promise.all([loadSettings(), loadProducts()]);
 }
 

@@ -1,22 +1,20 @@
-WEBUNIT — MOCKUP MATCH FIX
-===========================
+WEBUNIT — EXACT MOCKUP LAYOUT FIX
+==================================
 
-This update specifically corrects the oversized / mismatched homepage and
-brings the live site much closer to the approved mockup.
+This version is rebuilt around the exact approved mockup you supplied.
 
-FIXED
------
-- Hero is now the same compact proportion as the approved mockup
-- Uses the approved Chigz face/artwork on the right side
-- Removes the duplicate "Deals I'd actually" wording
-- Only "recommend." is highlighted blue
-- WEBUNIT by Chigz logo remains at the top
-- Search box remains
-- Stats panel now sits across the bottom of the hero like the mockup
-- Category tiles sit directly below the hero
-- Deals heading/card sizing is much closer to the mockup
-- Trust strip remains under the deals
-- Existing CMS products, images, affiliate links and YouTube video cards remain
+Key differences from the previous version:
+- Hero height locked to the approved compact 306px desktop proportion
+- No duplicate headline from the old CMS hero text
+- "recommend." is the only blue-highlighted word
+- Right-side hero artwork is cropped directly from the approved mockup
+- YouTube/stats panel sits across the bottom centre of the hero
+- WEBUNIT by Chigz logo is at the top
+- Header search + Browse Picks button match the approved design
+- Category tiles and quote strip match the approved design structure
+- Today's Deals section uses four fixed desktop columns, matching the card size in the mockup
+- Trust row sits directly underneath the deals
+- Existing CMS products, images, affiliate links, video mode and manual YouTube stats remain
 
 UPLOAD / REPLACE
 ----------------
@@ -24,15 +22,15 @@ Replace:
 - index.html
 - style.css
 - app.js
-- admin/config.yml
 
 Add / replace:
-- images/chigz-tech-hero-art.png
+- images/chigz-hero-art.png
 
-KEEP YOUR EXISTING:
+KEEP:
 - products.json
 - settings.json
+- admin/config.yml
 - images/uploads/
 - _headers
 
-This keeps your live CMS data intact.
+This is intentional: your live CMS data stays untouched.
