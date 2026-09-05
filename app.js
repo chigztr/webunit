@@ -33,6 +33,121 @@ function renderHeroSecondLine(value){
   el.innerHTML=`${escapeHtml(words.join(' '))} <em>${escapeHtml(last)}</em>`;
 }
 
+
+const SECTION_META = {
+  deals:   { anchor: 'deals',     kickerId: 'deals-kicker',   titleId: 'deals-title',   descriptionId: 'deals-description' },
+  picks:   { anchor: 'picks',     kickerId: 'picks-kicker',   titleId: 'picks-title',   descriptionId: 'picks-description' },
+  phones:  { anchor: 'phones',    kickerId: 'phones-kicker',  titleId: 'phones-title',  descriptionId: 'phones-description' },
+  creator: { anchor: 'creator',   kickerId: 'creator-kicker', titleId: 'creator-title', descriptionId: 'creator-description' },
+  home:    { anchor: 'home-tech', kickerId: 'home-kicker',    titleId: 'home-title',    descriptionId: 'home-description' }
+};
+
+function sectionNumber(value, fallback) {
+  const number = Number(value);
+  return Number.isFinite(number) ? number : fallback;
+}
+
+function sectionIsEnabled(config) {
+  return config && config.enabled !== false;
+}
+
+function makeNavLink(config, meta) {
+  const link = document.createElement('a');
+  link.href = `#${meta.anchor}`;
+  link.textContent = config.navLabel || config.heading || meta.anchor;
+  return link;
+}
+
+function makeCategoryLink(key, config, meta, isFirstVisible) {
+  const link = document.createElement('a');
+  link.className = `category${isFirstVisible ? ' active' : ''}`;
+  link.href = `#${meta.anchor}`;
+  link.dataset.sectionLink = key;
+
+  const icon = document.createElement('span');
+  icon.className = 'category-icon';
+  icon.textContent = config.icon || '◆';
+
+  const text = document.createElement('span');
+  const label = document.createElement('b');
+  label.textContent = config.categoryLabel || config.navLabel || config.heading || key;
+  const subtitle = document.createElement('small');
+  subtitle.textContent = config.categorySubtitle || '';
+
+  text.append(label, subtitle);
+  link.append(icon, text);
+  return link;
+}
+
+async function loadSections() {
+  try {
+    const res = await fetch('sections.json?ts=' + Date.now(), { cache: 'no-store' });
+    if (!res.ok) throw new Error(`sections.json returned ${res.status}`);
+
+    const configs = await res.json();
+    const managed = document.getElementById('managed-sections');
+    const desktopNav = document.getElementById('desktop-nav');
+    const mobileNav = document.getElementById('mobile-menu');
+    const categories = document.getElementById('category-row');
+
+    const entries = Object.entries(SECTION_META)
+      .map(([key, meta], index) => ({
+        key,
+        meta,
+        config: configs[key] || {},
+        originalIndex: index
+      }))
+      .sort((a, b) => {
+        const aOrder = sectionNumber(a.config.order, a.originalIndex + 1);
+        const bOrder = sectionNumber(b.config.order, b.originalIndex + 1);
+        return aOrder - bOrder || a.originalIndex - b.originalIndex;
+      });
+
+    if (desktopNav) desktopNav.innerHTML = '';
+    if (mobileNav) mobileNav.innerHTML = '';
+    if (categories) categories.innerHTML = '';
+
+    let firstCategory = true;
+
+    entries.forEach(({ key, meta, config }) => {
+      const section = document.querySelector(`[data-section-key="${key}"]`);
+      const enabled = sectionIsEnabled(config);
+
+      if (section) {
+        section.hidden = !enabled;
+        section.setAttribute('aria-hidden', enabled ? 'false' : 'true');
+
+        // Reordering moves the existing DOM node; products inside it stay intact.
+        if (managed) managed.appendChild(section);
+      }
+
+      if (!enabled) return;
+
+      setText(meta.kickerId, config.kicker);
+      setText(meta.titleId, config.heading);
+      setText(meta.descriptionId, config.description);
+
+      if (config.showInNav !== false) {
+        if (desktopNav) desktopNav.appendChild(makeNavLink(config, meta));
+        if (mobileNav) mobileNav.appendChild(makeNavLink(config, meta));
+      }
+
+      if (config.showCategory !== false && categories) {
+        categories.appendChild(makeCategoryLink(key, config, meta, firstCategory));
+        firstCategory = false;
+      }
+    });
+
+    // If everything is hidden from category navigation, hide the empty strip.
+    const categorySection = document.querySelector('.category-section');
+    if (categorySection) {
+      categorySection.hidden = !categories || categories.children.length === 0;
+    }
+  } catch (error) {
+    console.warn('Could not load section management; using built-in section layout.', error);
+  }
+}
+
 async function loadSettings(){
   try{
     const res=await fetch('settings.json?ts='+Date.now(),{cache:'no-store'});
@@ -60,21 +175,6 @@ async function loadSettings(){
     if(s.chigzChannelDisplayUrl)setText('channel-display-label',s.chigzChannelDisplayUrl);
     if(s.chigzChannelUrl)setHref('chigz-channel-link',s.chigzChannelUrl);
 
-    setText('deals-kicker',s.dealsKicker);
-    setText('deals-title',s.dealsTitle);
-    setText('deals-description',s.dealsDescription);
-    setText('picks-kicker',s.picksKicker);
-    setText('picks-title',s.picksTitle);
-    setText('picks-description',s.picksDescription);
-    setText('phones-kicker',s.phonesKicker);
-    setText('phones-title',s.phonesTitle);
-    setText('phones-description',s.phonesDescription);
-    setText('creator-kicker',s.creatorKicker);
-    setText('creator-title',s.creatorTitle);
-    setText('creator-description',s.creatorDescription);
-    setText('home-kicker',s.homeKicker);
-    setText('home-title',s.homeTitle);
-    setText('home-description',s.homeDescription);
     setText('reviews-kicker',s.reviewsKicker);
     setText('reviews-title',s.reviewsTitle);
     setText('reviews-description',s.reviewsDescription);
@@ -254,6 +354,7 @@ async function init(){
   enableMenu();
   const y=document.getElementById('year');
   if(y)y.textContent=new Date().getFullYear();
-  await Promise.all([loadSettings(),loadProducts()]);
+  await loadSettings();
+  await Promise.all([loadSections(), loadProducts()]);
 }
 init();

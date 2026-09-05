@@ -90,6 +90,52 @@ collections:
                 required: false
                 hint: "Optional. Static Image uses this first. Video mode uses it as the poster; leave blank to use the YouTube thumbnail."
 
+  - label: "Section Management"
+    name: "section_management"
+    editor:
+      preview: false
+    files:
+      - label: "Homepage Sections"
+        name: "sections"
+        file: "sections.json"
+        format: "json"
+        fields:
+          - label: "Today's Deals"
+            name: "deals"
+            widget: "object"
+            fields: &section_fields
+              - { label: "Show Section", name: "enabled", widget: "boolean", default: true }
+              - { label: "Order", name: "order", widget: "number", value_type: "int", min: 1, max: 20, default: 1, hint: "Lower numbers appear first." }
+              - { label: "Show in Top Navigation", name: "showInNav", widget: "boolean", default: true }
+              - { label: "Show Category Button", name: "showCategory", widget: "boolean", default: true }
+              - { label: "Top Navigation Label", name: "navLabel", widget: "string" }
+              - { label: "Category Button Label", name: "categoryLabel", widget: "string" }
+              - { label: "Category Button Subtitle", name: "categorySubtitle", widget: "string", required: false }
+              - { label: "Category Icon", name: "icon", widget: "string", required: false, hint: "Examples: ◆ ★ ▯ ◉ ⌂" }
+              - { label: "Small Kicker", name: "kicker", widget: "string" }
+              - { label: "Section Heading", name: "heading", widget: "string" }
+              - { label: "Section Description", name: "description", widget: "text" }
+
+          - label: "Chigz Picks"
+            name: "picks"
+            widget: "object"
+            fields: *section_fields
+
+          - label: "Smartphones"
+            name: "phones"
+            widget: "object"
+            fields: *section_fields
+
+          - label: "Creator Gear"
+            name: "creator"
+            widget: "object"
+            fields: *section_fields
+
+          - label: "Home Tech"
+            name: "home"
+            widget: "object"
+            fields: *section_fields
+
   - label: "Site Settings"
     name: "site_settings"
     editor:
@@ -151,26 +197,6 @@ collections:
           - { label: "Footer Tagline", name: "footerTagline", widget: "string" }
           - { label: "Affiliate Disclosure", name: "affiliateDisclosure", widget: "text" }
           - { label: "Footer Credit", name: "footerCredit", widget: "string" }
-
-          - { label: "Deals — Kicker", name: "dealsKicker", widget: "string" }
-          - { label: "Deals — Heading", name: "dealsTitle", widget: "string" }
-          - { label: "Deals — Description", name: "dealsDescription", widget: "text" }
-
-          - { label: "Chigz Picks — Kicker", name: "picksKicker", widget: "string" }
-          - { label: "Chigz Picks — Heading", name: "picksTitle", widget: "string" }
-          - { label: "Chigz Picks — Description", name: "picksDescription", widget: "text" }
-
-          - { label: "Smartphones — Kicker", name: "phonesKicker", widget: "string" }
-          - { label: "Smartphones — Heading", name: "phonesTitle", widget: "string" }
-          - { label: "Smartphones — Description", name: "phonesDescription", widget: "text" }
-
-          - { label: "Creator Gear — Kicker", name: "creatorKicker", widget: "string" }
-          - { label: "Creator Gear — Heading", name: "creatorTitle", widget: "string" }
-          - { label: "Creator Gear — Description", name: "creatorDescription", widget: "text" }
-
-          - { label: "Home Tech — Kicker", name: "homeKicker", widget: "string" }
-          - { label: "Home Tech — Heading", name: "homeTitle", widget: "string" }
-          - { label: "Home Tech — Description", name: "homeDescription", widget: "text" }
 
           - { label: "Reviews CTA — Kicker", name: "reviewsKicker", widget: "string" }
           - { label: "Reviews CTA — Heading", name: "reviewsTitle", widget: "string" }

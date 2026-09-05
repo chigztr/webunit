@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=20260905-readable2">
+  <link rel="stylesheet" href="style.css?v=20260905-sections1">
 </head>
 <body>
 
@@ -20,13 +20,7 @@
       <span class="brand-by">by</span><span class="brand-chigz">Chigz</span>
     </a>
 
-    <nav class="desktop-nav" aria-label="Primary navigation">
-      <a href="#deals">Deals</a>
-      <a href="#picks">Chigz Picks</a>
-      <a href="#phones">Smartphones</a>
-      <a href="#creator">Creator Gear</a>
-      <a href="#home-tech">Home Tech</a>
-    </nav>
+    <nav class="desktop-nav" id="desktop-nav" aria-label="Primary navigation"></nav>
 
     <div class="header-actions">
       <label class="search-box" aria-label="Search products">
@@ -38,13 +32,7 @@
     </div>
   </div>
 
-  <nav class="mobile-menu" id="mobile-menu" aria-label="Mobile navigation">
-    <a href="#deals">Deals</a>
-    <a href="#picks">Chigz Picks</a>
-    <a href="#phones">Smartphones</a>
-    <a href="#creator">Creator Gear</a>
-    <a href="#home-tech">Home Tech</a>
-  </nav>
+  <nav class="mobile-menu" id="mobile-menu" aria-label="Mobile navigation"></nav>
 </header>
 
 <main id="top">
@@ -139,27 +127,12 @@
 
   <!-- SIMPLE CATEGORY TABS -->
   <section class="category-section">
-    <div class="wrap category-row">
-      <a class="category active" href="#deals">
-        <span class="category-icon">◆</span><span><b>Today's Deals</b><small>Current offers</small></span>
-      </a>
-      <a class="category" href="#picks">
-        <span class="category-icon">★</span><span><b>Chigz Picks</b><small>Best of the best</small></span>
-      </a>
-      <a class="category" href="#phones">
-        <span class="category-icon">▯</span><span><b>Smartphones</b><small>Phones worth buying</small></span>
-      </a>
-      <a class="category" href="#creator">
-        <span class="category-icon">◉</span><span><b>Creator Gear</b><small>Behind the channel</small></span>
-      </a>
-      <a class="category" href="#home-tech">
-        <span class="category-icon">⌂</span><span><b>Home Tech</b><small>TVs, projectors & more</small></span>
-      </a>
-    </div>
+    <div class="wrap category-row" id="category-row"></div>
   </section>
 
   <!-- DEALS: one featured deal + supporting deal cards -->
-  <section class="section deal-zone deals-section" id="deals">
+  <div id="managed-sections">
+<section class="section deal-zone deals-section" id="deals" data-section-key="deals">
     <div class="wrap">
       <div class="section-head">
         <div>
@@ -182,7 +155,7 @@
   </section>
 
   <!-- CHIGZ PICKS gets a darker editorial treatment -->
-  <section class="section deal-zone picks-section" id="picks">
+  <section class="section deal-zone picks-section" id="picks" data-section-key="picks">
     <div class="wrap">
       <div class="section-head section-head-light">
         <div>
@@ -195,7 +168,7 @@
     </div>
   </section>
 
-  <section class="section deal-zone" id="phones">
+  <section class="section deal-zone" id="phones" data-section-key="phones">
     <div class="wrap">
       <div class="section-head">
         <div>
@@ -208,7 +181,7 @@
     </div>
   </section>
 
-  <section class="section deal-zone" id="creator">
+  <section class="section deal-zone" id="creator" data-section-key="creator">
     <div class="wrap">
       <div class="section-head">
         <div>
@@ -221,7 +194,7 @@
     </div>
   </section>
 
-  <section class="section deal-zone" id="home-tech">
+  <section class="section deal-zone" id="home-tech" data-section-key="home">
     <div class="wrap">
       <div class="section-head">
         <div>
@@ -233,6 +206,8 @@
       <div class="product-grid dark-grid" data-category="home"></div>
     </div>
   </section>
+
+  </div>
 
   <section class="review-cta">
     <div class="wrap">
@@ -273,6 +248,6 @@
   </div>
 </footer>
 
-<script src="app.js?v=20260905-readable2"></script>
+<script src="app.js?v=20260905-sections1"></script>
 </body>
 </html>

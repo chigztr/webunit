@@ -436,3 +436,19 @@ footer{padding:8px 0 42px;background:#fff}
   .review-cta-card p{font-size:15px}
   .footer-grid p{font-size:13.5px}
 }
+
+
+/* SECTION MANAGEMENT */
+[data-section-key][hidden],
+.category-section[hidden]{
+  display:none !important;
+}
+
+#desktop-nav:empty,
+#mobile-menu:empty{
+  display:none;
+}
+
+#category-row:empty{
+  display:none;
+}
