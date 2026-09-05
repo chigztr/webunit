@@ -117,14 +117,15 @@
       "description": "iPhone 17 Pro (Blue)"
     },
     {
-      "category": "creator",
-      "name": "Your Main Microphone",
       "badge": "Creator Gear",
-      "description": "Add the microphone you trust for voiceovers, reviews or studio recording.",
       "meta": "Used by Chigz Tech Reviews",
+      "name": "Your Main Microphone",
       "affiliate": "#",
-      "review": "#",
-      "image": ""
+      "media_type": "video",
+      "review": "https://youtu.be/LVepHV5i2bQ",
+      "image": "",
+      "description": "DJI Mic Mini 2 is what I now use for all my videos and voice overs",
+      "category": "creator"
     },
     {
       "category": "creator",
