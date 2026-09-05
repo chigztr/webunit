@@ -110,6 +110,18 @@ collections:
           - { label: "Hero Headline — Line 2", name: "heroHeadline2", widget: "string" }
           - { label: "Hero Description", name: "heroCopy", widget: "text" }
           - { label: "YouTube Channel Link", name: "youtubeUrl", widget: "string" }
+          - label: "YouTube Subscriber Count"
+            name: "youtubeSubscriberCount"
+            widget: "string"
+            required: false
+            default: "650K+"
+            hint: "Manual display value for the top strip. Examples: 650K+, 651K, 1.02M"
+          - label: "YouTube Total View Count"
+            name: "youtubeTotalViews"
+            widget: "string"
+            required: false
+            default: "—"
+            hint: "Manual display value for the top strip. Examples: 185M+, 250M, 1.2B"
           - { label: "ChigzTech.com Link", name: "chigzTechUrl", widget: "string" }
           - { label: "Contact Email", name: "contactEmail", widget: "string" }
           - { label: "Footer Tagline", name: "footerTagline", widget: "string" }

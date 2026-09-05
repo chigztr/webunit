@@ -1,38 +1,61 @@
-WEBUNIT MEDIA CHOICE UPDATE
-===========================
+WEBUNIT PREMIUM REDESIGN — MANUAL YOUTUBE STATS
+================================================
 
-This update adds a Card Media option to every product:
+This version removes the live YouTube API counter.
 
-- Static Image
-- YouTube Video — click to play
+The top strip now shows:
+- YouTube Subscribers
+- Total YouTube Views
 
-FILES TO REPLACE
+Both values are edited manually from the CMS.
+
+UPLOAD / REPLACE
 ----------------
-1. Replace app.js in the ROOT of the GitHub repo.
-2. Replace admin/config.yml inside the admin folder.
+Replace these files in your GitHub repo:
+- index.html
+- style.css
+- app.js
+- admin/config.yml
 
-No other files need changing.
+DO NOT replace:
+- products.json
+- settings.json
+- images/uploads
+- _headers
 
-HOW IT WORKS
-------------
-Static Image:
-- Uploaded Product Image is shown.
-- If Product Image is blank and a YouTube Review Link exists, the YouTube thumbnail is used automatically.
+CMS
+---
+After Cloudflare redeploys, open:
 
-YouTube Video:
-- The card initially shows the uploaded Product Image as a custom poster.
-- If Product Image is blank, the YouTube thumbnail is used automatically.
-- A YouTube play button appears.
-- The actual YouTube player only loads after the visitor clicks Play, keeping the page fast.
-- The existing Watch Review button remains.
-
-EXISTING PRODUCTS
------------------
-Existing products without a Card Media value automatically behave as Static Image, so nothing breaks after this update.
-
-AFTER UPLOAD
-------------
-Wait for Cloudflare Pages to redeploy, then open:
 https://webunit.co.uk/admin/
 
-Edit a product and you will see the new Card Media dropdown.
+Go to:
+Site Settings > Homepage & Links
+
+You will now see:
+- YouTube Subscriber Count
+- YouTube Total View Count
+
+Example values:
+Subscriber Count: 650K+
+Total View Count: 185M+
+
+You can type the exact display format you want.
+
+IMPORTANT
+---------
+You do NOT need a YouTube API key anymore.
+
+If you already uploaded the previous redesign's file:
+functions/api/youtube-subscribers.js
+
+you may delete that file from GitHub later. It is no longer used by the website,
+so leaving it there temporarily will not affect the site.
+
+Everything else is preserved:
+- CMS products
+- Static Image / YouTube Video cards
+- Affiliate links
+- Product images
+- Site settings
+- Cloudflare hosting
