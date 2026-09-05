@@ -8,7 +8,8 @@
       "meta": "Add current deal details here",
       "affiliate": "https://bit.ly/4zOM8xL",
       "review": "https://youtu.be/1V66tfO0L9A",
-      "image": "/images/uploads/c.png"
+      "image": "/images/uploads/c.png",
+      "media_type": "video"
     },
     {
       "category": "deals",
@@ -18,7 +19,8 @@
       "meta": "Add current deal details here",
       "affiliate": "https://amzn.to/4zS4he9",
       "review": "#",
-      "image": "/images/uploads/d.png"
+      "image": "/images/uploads/d.png",
+      "media_type": "image"
     },
     {
       "category": "deals",
@@ -28,7 +30,8 @@
       "meta": "Keep this section fresh",
       "affiliate": "#",
       "review": "#",
-      "image": ""
+      "image": "",
+      "media_type": "image"
     },
     {
       "category": "picks",
@@ -38,7 +41,8 @@
       "meta": "Tested by Chigz",
       "affiliate": "#",
       "review": "https://youtu.be/1V66tfO0L9A",
-      "image": ""
+      "image": "",
+      "media_type": "image"
     },
     {
       "category": "picks",
@@ -48,7 +52,8 @@
       "meta": "Chigz Tech Score: 92/100",
       "affiliate": "#",
       "review": "#",
-      "image": ""
+      "image": "",
+      "media_type": "image"
     },
     {
       "category": "picks",
@@ -58,7 +63,8 @@
       "meta": "Full review available",
       "affiliate": "#",
       "review": "#",
-      "image": ""
+      "image": "",
+      "media_type": "image"
     },
     {
       "category": "phones",
@@ -68,7 +74,8 @@
       "meta": "Best for most flagship buyers",
       "affiliate": "#",
       "review": "https://youtu.be/0M9DL1nFGYw",
-      "image": ""
+      "image": "",
+      "media_type": "image"
     },
     {
       "category": "phones",
@@ -78,7 +85,8 @@
       "meta": "Best for performance/value",
       "affiliate": "#",
       "review": "https://youtu.be/1V66tfO0L9A",
-      "image": ""
+      "image": "",
+      "media_type": "image"
     },
     {
       "category": "phones",
@@ -88,7 +96,8 @@
       "meta": "Best for mobile imaging",
       "affiliate": "#",
       "review": "#",
-      "image": ""
+      "image": "",
+      "media_type": "image"
     },
     {
       "category": "creator",
@@ -98,7 +107,8 @@
       "meta": "Used by Chigz Tech Reviews",
       "affiliate": "#",
       "review": "#",
-      "image": ""
+      "image": "",
+      "media_type": "image"
     },
     {
       "category": "creator",
@@ -108,7 +118,8 @@
       "meta": "Used by Chigz Tech Reviews",
       "affiliate": "#",
       "review": "#",
-      "image": ""
+      "image": "",
+      "media_type": "image"
     },
     {
       "category": "creator",
@@ -118,7 +129,8 @@
       "meta": "Used by Chigz Tech Reviews",
       "affiliate": "#",
       "review": "#",
-      "image": ""
+      "image": "",
+      "media_type": "image"
     },
     {
       "category": "home",
@@ -128,7 +140,8 @@
       "meta": "Chigz Tech Score: 92/100",
       "affiliate": "#",
       "review": "#",
-      "image": ""
+      "image": "",
+      "media_type": "image"
     },
     {
       "category": "home",
@@ -138,7 +151,8 @@
       "meta": "Projector recommendation",
       "affiliate": "#",
       "review": "#",
-      "image": ""
+      "image": "",
+      "media_type": "image"
     },
     {
       "category": "home",
@@ -148,7 +162,8 @@
       "meta": "Smart-home recommendation",
       "affiliate": "#",
       "review": "https://youtu.be/Hu0G3TenTIo",
-      "image": ""
+      "image": "",
+      "media_type": "image"
     }
   ]
 }
