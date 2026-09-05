@@ -1,21 +1,28 @@
-WEBUNIT — NEW RESPONSIVE DESIGN
-================================
+WEBUNIT — CLEAN RESPONSIVE REDESIGN
+====================================
 
-This is the new layout based on the latest approved design direction.
+This replaces the unstable overlapping hero layout with a simpler,
+more reliable design that should look consistent on desktop and mobile.
 
-DESIGN CHANGES
---------------
-- Cleaner two-column desktop hero
-- Uses your real uploaded face/photo
-- Fully stacked mobile layout — no overlapping hero image/stats
-- Large readable typography on phones
-- Browse Picks + Watch Latest Video buttons
-- YouTube subscriber and total views card
-- First three CMS products automatically appear as mini hero product cards
-- Horizontal mobile category navigation
-- Larger product-card text and buttons on mobile
-- Existing product CMS, media type, YouTube click-to-play, affiliate links and manual stats remain compatible
-- Existing CMS hero / section / footer text remains editable
+KEY FIXES
+---------
+- No overlapping stats panel
+- No tiny floating product thumbnails in the hero
+- Clean two-column desktop hero
+- Uses your real uploaded photo
+- Hero image is a single stable visual panel
+- Stats sit in normal page flow below the hero
+- Mobile stacks naturally:
+    1. Hero text
+    2. Buttons
+    3. Photo
+    4. YouTube stats
+    5. Categories
+- Larger small text throughout
+- Product cards keep readable 14–15px descriptions on mobile
+- Existing CMS text editing continues to work
+- Existing manual subscriber / total-view counts continue to work
+- Existing product cards, affiliate links and YouTube click-to-play remain compatible
 
 UPLOAD / REPLACE
 ----------------
@@ -24,10 +31,10 @@ Replace:
 - style.css
 - app.js
 
-Add:
-- images/chigz-portrait.jpg
+Add / replace:
+- images/chigz-hero.jpg
 
-KEEP your existing:
+KEEP YOUR EXISTING:
 - products.json
 - settings.json
 - admin/config.yml
