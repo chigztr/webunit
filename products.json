@@ -9,7 +9,7 @@
       "review": "https://youtu.be/1V66tfO0L9A",
       "image": "",
       "description": "Flagship-level performance at a price that makes sense when discounted.",
-      "category": "picks"
+      "category": "deals"
     },
     {
       "badge": "Deal",
@@ -20,10 +20,10 @@
       "review": "https://youtu.be/mNysoERdjJM",
       "image": "/images/uploads/d.png",
       "description": "Immersive AR display glasses for movies, gaming and travel.",
-      "category": "picks"
+      "category": "deals"
     },
     {
-      "category": "picks",
+      "category": "deals",
       "name": "Featured Deal",
       "badge": "Hot Deal",
       "description": "Replace this with any genuine short-term offer worth highlighting.",
