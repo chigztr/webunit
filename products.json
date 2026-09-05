@@ -144,14 +144,15 @@
       "image": ""
     },
     {
-      "category": "home",
-      "name": "Roborock Qrevo Edge 2 Flow",
       "badge": "Smart Home Pick",
-      "description": "A strong robot vacuum option for automated everyday cleaning.",
       "meta": "Smart-home recommendation",
+      "name": "Roborock Qrevo Edge 2 Flow",
       "affiliate": "https://amzn.to/4hNJxxx",
+      "media_type": "video",
       "review": "https://youtu.be/Hu0G3TenTIo",
-      "image": ""
+      "image": "",
+      "description": "A strong robot vacuum option for automated everyday cleaning.",
+      "category": "home"
     }
   ]
 }
