@@ -49,7 +49,7 @@ collections:
                 name: "badge"
                 widget: "string"
                 required: false
-                hint: "Examples: Chigz Pick, Hot Deal, Best Camera, Tested by Chigz"
+                hint: "Examples: Deal, Hot Deal, Chigz Pick, Best Camera"
 
               - label: "Recommendation"
                 name: "description"
@@ -60,7 +60,7 @@ collections:
                 name: "meta"
                 widget: "string"
                 required: false
-                hint: "Example: Chigz Tech Score: 92/100"
+                hint: "Example: Chigz Tech Score: 92/100 or current deal price."
 
               - label: "Affiliate / Buy Link"
                 name: "affiliate"
@@ -73,7 +73,7 @@ collections:
                 widget: "string"
                 required: false
                 default: "#"
-                hint: "Paste a YouTube URL. This powers Watch Review, automatic thumbnails and YouTube Video mode."
+                hint: "Used for Watch Review, automatic YouTube thumbnails and Video mode."
 
               - label: "Card Media"
                 name: "media_type"
@@ -83,13 +83,12 @@ collections:
                 options:
                   - { label: "Static Image", value: "image" }
                   - { label: "YouTube Video — click to play", value: "video" }
-                hint: "If left unset, the site treats it as Static Image."
 
               - label: "Product Image"
                 name: "image"
                 widget: "image"
                 required: false
-                hint: "Optional. In YouTube Video mode this becomes the video poster; leave blank to use the YouTube thumbnail automatically."
+                hint: "Optional. Static Image uses this first. Video mode uses it as the poster; leave blank to use the YouTube thumbnail."
 
   - label: "Site Settings"
     name: "site_settings"
@@ -105,14 +104,19 @@ collections:
           - { label: "SEO Description", name: "metaDescription", widget: "text" }
           - { label: "Hero Eyebrow", name: "heroEyebrow", widget: "string" }
           - { label: "Hero Headline — Line 1", name: "heroHeadline1", widget: "string" }
-          - { label: "Hero Highlight Word / Phrase", name: "heroHeadline2", widget: "string" }
+
+          - label: "Hero Headline — Line 2"
+            name: "heroHeadline2"
+            widget: "string"
+            hint: "The final word is automatically highlighted in blue."
+
           - { label: "Hero Description", name: "heroCopy", widget: "text" }
 
-          - label: "Hero Portrait Image"
+          - label: "Hero Feature Image"
             name: "heroPortraitImage"
             widget: "image"
             required: false
-            hint: "Optional. Upload a new Chigz portrait here. If blank, the bundled images/chigz-hero.png is used."
+            hint: "Optional. Upload a wide Chigz/tech image. Leave blank to use the bundled hero-scene.jpg."
 
           - { label: "YouTube Channel Link", name: "youtubeUrl", widget: "string" }
 
@@ -121,22 +125,22 @@ collections:
             widget: "string"
             required: false
             default: "650K+"
-            hint: "Manual display value. Examples: 650K+, 651K, 1.02M"
+            hint: "Manual display value, e.g. 689.4K+."
 
           - label: "YouTube Total View Count"
             name: "youtubeTotalViews"
             widget: "string"
             required: false
             default: "185M+"
-            hint: "Manual display value. Examples: 185M+, 250M, 1.2B"
+            hint: "Manual display value, e.g. 198.1M+."
 
-          - label: "Top Stats Channel URL"
+          - label: "Stats Channel URL"
             name: "chigzChannelUrl"
             widget: "string"
             required: false
-            default: "http://Youtube.com/@ChigzTech"
+            default: "https://Youtube.com/@ChigzTech"
 
-          - label: "Top Stats Channel Label"
+          - label: "Stats Channel Label"
             name: "chigzChannelDisplayUrl"
             widget: "string"
             required: false
@@ -147,21 +151,27 @@ collections:
           - { label: "Footer Tagline", name: "footerTagline", widget: "string" }
           - { label: "Affiliate Disclosure", name: "affiliateDisclosure", widget: "text" }
           - { label: "Footer Credit", name: "footerCredit", widget: "string" }
+
           - { label: "Deals — Kicker", name: "dealsKicker", widget: "string" }
           - { label: "Deals — Heading", name: "dealsTitle", widget: "string" }
           - { label: "Deals — Description", name: "dealsDescription", widget: "text" }
+
           - { label: "Chigz Picks — Kicker", name: "picksKicker", widget: "string" }
           - { label: "Chigz Picks — Heading", name: "picksTitle", widget: "string" }
           - { label: "Chigz Picks — Description", name: "picksDescription", widget: "text" }
+
           - { label: "Smartphones — Kicker", name: "phonesKicker", widget: "string" }
           - { label: "Smartphones — Heading", name: "phonesTitle", widget: "string" }
           - { label: "Smartphones — Description", name: "phonesDescription", widget: "text" }
+
           - { label: "Creator Gear — Kicker", name: "creatorKicker", widget: "string" }
           - { label: "Creator Gear — Heading", name: "creatorTitle", widget: "string" }
           - { label: "Creator Gear — Description", name: "creatorDescription", widget: "text" }
+
           - { label: "Home Tech — Kicker", name: "homeKicker", widget: "string" }
           - { label: "Home Tech — Heading", name: "homeTitle", widget: "string" }
           - { label: "Home Tech — Description", name: "homeDescription", widget: "text" }
+
           - { label: "Reviews CTA — Kicker", name: "reviewsKicker", widget: "string" }
           - { label: "Reviews CTA — Heading", name: "reviewsTitle", widget: "string" }
           - { label: "Reviews CTA — Description", name: "reviewsDescription", widget: "text" }
