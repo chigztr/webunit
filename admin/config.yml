@@ -13,6 +13,7 @@ media_folder: "images/uploads"
 public_folder: "/images/uploads"
 
 publish_mode: simple
+
 collections:
   - label: "WebUnit Products"
     name: "webunit_products"
@@ -79,11 +80,12 @@ collections:
               - label: "Card Media"
                 name: "media_type"
                 widget: "select"
+                required: false
                 default: "image"
                 options:
                   - { label: "Static Image", value: "image" }
                   - { label: "YouTube Video — click to play", value: "video" }
-                hint: "Static Image shows the uploaded image, or automatically uses the YouTube thumbnail if no image is uploaded. YouTube Video shows a play button and only loads the embedded video after a visitor clicks it."
+                hint: "Optional for existing products. If left unset, the site treats it as Static Image."
 
               - label: "Product Image"
                 name: "image"
