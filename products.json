@@ -12,14 +12,15 @@
       "category": "deals"
     },
     {
-      "category": "deals",
-      "name": "RayNeo GT Max",
       "badge": "Deal",
-      "description": "Immersive AR display glasses for movies, gaming and travel.",
       "meta": "Add current deal details here",
+      "name": "RayNeo GT Max",
       "affiliate": "https://amzn.to/4zS4he9",
+      "media_type": "image",
       "review": "https://youtu.be/mNysoERdjJM",
-      "image": ""
+      "image": "/images/uploads/d.png",
+      "description": "Immersive AR display glasses for movies, gaming and travel.",
+      "category": "deals"
     },
     {
       "category": "deals",
@@ -32,34 +33,37 @@
       "image": ""
     },
     {
-      "category": "picks",
-      "name": "POCO F9 Ultra",
       "badge": "Chigz Pick",
-      "description": "One of the strongest all-round performance phones I’ve tested this year.",
       "meta": "Tested by Chigz",
+      "name": "POCO F9 Ultra",
       "affiliate": "https://bit.ly/4zOM8xL",
+      "media_type": "video",
       "review": "https://youtu.be/1V66tfO0L9A",
-      "image": ""
+      "image": "",
+      "description": "One of the strongest all-round performance phones I’ve tested this year.",
+      "category": "picks"
     },
     {
-      "category": "picks",
-      "name": "LG OLED evo C6",
       "badge": "Chigz Pick",
-      "description": "A premium OLED choice with especially strong gaming performance.",
       "meta": "Chigz Tech Score: 92/100",
+      "name": "LG OLED evo C6",
       "affiliate": "https://bit.ly/4bSW9Q4",
+      "media_type": "video",
       "review": "https://youtu.be/vfkVpjAJ5D8",
-      "image": ""
+      "image": "",
+      "description": "A premium OLED choice with especially strong gaming performance.",
+      "category": "picks"
     },
     {
-      "category": "picks",
-      "name": "RayNeo GT Max",
       "badge": "Tested by Chigz",
-      "description": "A compelling wearable display for private viewing and portable entertainment.",
       "meta": "Full review available",
+      "name": "RayNeo GT Max",
       "affiliate": "https://bit.ly/4AauEw2",
+      "media_type": "video",
       "review": "https://youtu.be/mNysoERdjJM",
-      "image": ""
+      "image": "/images/uploads/d.png",
+      "description": "A compelling wearable display for private viewing and portable entertainment.",
+      "category": "picks"
     },
     {
       "badge": "Best All-Rounder",
